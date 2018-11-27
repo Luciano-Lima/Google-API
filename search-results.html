@@ -13,6 +13,7 @@
     <!--<script src="/javascript/java.js"></script>-->
     <script async defer src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXLJDTBexaPjcYpLLdLEL117qR0_7w270&callback=initMap"></script>
+    
 </head>
 <body>
     <div class="container">
@@ -41,27 +42,8 @@
             s.parentNode.insertBefore(gcse, s);
           })();
         </script>
-        <gcse:searchbox-only></gcse:searchbox-only>
-        <gcse:searchresults defaultToImageSearch="true"></gcse:searchresults>
+        <gcse:search></gcse:search>
     </div>
-    
-    <div id="map"></div>
-    <script>
-        var map;
-        function initMap(){
-            map = new google.maps.Map(document.getElementById('map'),{
-                center: {lat:46.619261, lng:-33134766},
-                zoom:3,
-            });
-        }
-    </script>
-    <footer>
-        
-    </footer>
-    
-    <div>
-        <!--custon searh API key  AIzaSyCFpnPGDUeAyUq8EQpRQVieuo3zVg6BkBI    -->
-    </div>
-
 </body>
+
 </html>
