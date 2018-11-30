@@ -6,16 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Google API</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/main.css" type="text/css" />
-    <script async defer src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script async defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script async defersrc="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <!--<script src="/javascript/java.js"></script>-->
-    <script async defer src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXLJDTBexaPjcYpLLdLEL117qR0_7w270&callback=initMap"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/main.css" type="text/css">
 </head>
 <body>
-    <div class="container">
+    <!--navegation menu--->
+    <div class="container-fluid">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#">Navbar</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,39 +25,126 @@
                 </div>
             </div>
         </nav>
-        <h1>Explore the World</h1>
-        <script>
-          (function() {
-            var cx = '000839719132049059247:-xxothaal9a';
-            var gcse = document.createElement('script');
-            gcse.type = 'text/javascript';
-            gcse.async = true;
-            gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(gcse, s);
-          })();
-        </script>
-        <gcse:searchbox-only></gcse:searchbox-only>
-        <gcse:searchresults defaultToImageSearch="true"></gcse:searchresults>
-    </div>
-    
-    <div id="map"></div>
-    <script>
-        var map;
-        function initMap(){
-            map = new google.maps.Map(document.getElementById('map'),{
-                center: {lat:46.619261, lng:-33134766},
-                zoom:3,
-            });
-        }
-    </script>
-    <footer>
         
-    </footer>
+        <div class="pimg1">
+            <h1>Explore the World <i class="fa fa-globe" aria-hidden="true"></i></h1>
+        </div>
+       
+        <!--Google Search Bar -->   
+        <div class="search-box">
+            <script>
+            (function() {
+                var cx = '000839719132049059247:-xxothaal9a';
+                var gcse = document.createElement('script');
+                gcse.type = 'text/javascript';
+                gcse.async = true;
+                gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(gcse, s);
+              })();
+            </script>
+            <gcse:searchbox-only></gcse:searchbox-only>
+            <gcse:searchresults defaultToImageSearch="true"></gcse:searchresults>
+        </div>
+        
+        <!--Popular destination section-->
+        
+        <section class="popDest">
+            <h2 class="text-center">Popular Holyday Destination</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card text-white bg-primary text-center">
+                        <img class="card-img-top img-thumbnail" src="/pictures/barbados.jpg" alt="barbados"</img>
+                        <div class="card-body">
+                            <h5 class="card-title text-danger">Barbados</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                            sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                            magna aliquam erat volutpat.</p>
+                            <a href="#" class="btn btn-primary">Book your Ticket Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-white bg-danger text-center">
+                        <img class="card-img-top img-thumbnail" src="/pictures/cayman.jpg" alt="cayman"</img>
+                        <div class="card-body">
+                            <h5 class="card-title">Cayman</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                            sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                            magna aliquam erat volutpat.</p>
+                            <a href="#" class="btn btn-primary">Book your Ticket Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-white bg-warning text-center">
+                        <img class="card-img-top img-thumbnail" src="/pictures/palawan.jpg" alt="palawan"</img>
+                        <div class="card-body">
+                            <h5 class="card-title">Palawan</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                            sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                            magna aliquam erat volutpat.</p>
+                            <a href="#" class="btn btn-primary">Book your Ticket Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pimg2">
+            <h2 class="text-center">Explore the World</h2>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+            sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+            magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
+            quis nostrud exerci tation ullamcorper suscipit lobortis nisl
+            ut aliquip ex ea commodo consequat. Duis autem vel eum iriure
+            dolor in hendrerit in vulputate velit esse molestie consequat,
+            vel illum dolore eu feugiat nulla facilisis at vero eros et
+            accumsan et iusto odio dignissim qui blandit praesent luptatum
+            zzril delenit augue duis dolore te feugait nulla facilisi.
+            Nam liber tempor cum soluta nobis eleifend option congue
+            nihil imperdiet doming id quod mazim placerat facer possim
+            assum. Typi non habent claritatem insitam; est usus legentis
+            in iis qui facit eorum claritatem. Investigationes
+            demonstraverunt lectores legere me lius quod ii legunt saepius.
+            Claritas est etiam processus dynamicus, qui sequitur mutationem
+            consuetudium lectorum. Mirum est notare quam littera gothica,
+            quam nunc putamus parum claram, anteposuerit litterarum formas
+            humanitatis per seacula quarta decima et quinta decima. Eodem
+            modo typi, qui nunc nobis videntur parum clari, fiant sollemnes
+            in futurum.</p>
+        </div>
     
-    <div>
-        <!--custon searh API key  AIzaSyCFpnPGDUeAyUq8EQpRQVieuo3zVg6BkBI    -->
+        <footer>
+           <div class="pimg3">
+                <h3 class="text-center">Explore the World</h3>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
+                quis nostrud exerci tation ullamcorper suscipit lobortis nisl
+                ut aliquip ex ea commodo consequat. Duis autem vel eum iriure
+                dolor in hendrerit in vulputate velit esse molestie consequat,
+                vel illum dolore eu feugiat nulla facilisis at vero eros et
+                accumsan et iusto odio dignissim qui blandit praesent luptatum
+                zzril delenit augue duis dolore te feugait nulla facilisi.
+                Nam liber tempor cum soluta nobis eleifend option congue
+                nihil imperdiet doming id quod mazim placerat facer possim
+                assum. Typi non habent claritatem insitam; est usus legentis
+                in iis qui facit eorum claritatem. Investigationes
+                demonstraverunt lectores legere me lius quod ii legunt saepius.
+                Claritas est etiam processus dynamicus, qui sequitur mutationem
+                consuetudium lectorum. Mirum est notare quam littera gothica,
+                quam nunc putamus parum claram, anteposuerit litterarum formas
+                humanitatis per seacula quarta decima et quinta decima. Eodem
+                modo typi, qui nunc nobis videntur parum clari, fiant sollemnes
+                in futurum.</p>
+            </div>
+        </footer>
     </div>
-
+    <script async defer src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/javascript/script.js"></script>
+    <script async defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script async defersrc="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <!--<script async defer src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>-->
+    <!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXLJDTBexaPjcYpLLdLEL117qR0_7w270&callback=initMap"></script>-->
 </body>
 </html>
