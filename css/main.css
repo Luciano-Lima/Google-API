@@ -9,8 +9,10 @@ html, body {
     color: black;
 }
 
-#map {
+#map  {
     height: 100%;
+    
+    
 }
 
 .container-fluid {
@@ -31,8 +33,6 @@ html, body {
     padding-right: 10px;
     color: #deceab;
 }
-
-
 
 .navbar-light .navbar-brand {
     color: #ffff;
@@ -106,8 +106,9 @@ h4 {
 
 .footer {
     width: 100%;
-    height: 100%;
+    height: 550px;
     background-color: #798088;
+    overflow: hidden;
 }
 
 
