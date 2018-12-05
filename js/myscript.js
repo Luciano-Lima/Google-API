@@ -2,12 +2,13 @@
 var map;
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'),{
-    center: {lat: -34.397, lng: 150.644},
+    center: {lat: 40.782710, lng: -73.965310},
     zoon: 8
   });
 }
 
-// google sign 
+// google sign
+
 function onSuccess(googleUser) {
       console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
     }
@@ -43,8 +44,7 @@ function onSuccess(googleUser) {
     
 // search results
 
-
-  (function() {
+(function() {
     var cx = '000839719132049059247:-xxothaal9a';
     var gcse = document.createElement('script');
     gcse.type = 'text/javascript';
