@@ -47,39 +47,6 @@ html, body {
     font-size: 20px;
 }
 
- h1 {
-    position: relative;
-    top: 50%;
-    text-align: center;
-    color: #fff;
-    font-weight: 600;
-    font-size: 4em;
-    font-family: 'Lobster', cursive;
-}
-h4 {
-    font-size: 1.5rem;
-    color: #ffffff;
-    font-weight: 600;
-}
-
-.searchbackground {
-    background-color: #798088;
-    border-top: 5px solid #ebc9a3;
-    height: 70px;
-}
-
-.icon {
-   -webkit-filter: invert(25%);
- }
- 
-.icons {
-    margin: 40px;
-}
-
-.col-sm-4 p {
-    color: #535353;
-}
-
 .pimg1 {
     background-image: url('/pictures/header_pic.jpg');
     width: 100%;
@@ -89,36 +56,57 @@ h4 {
     background-position: center;
     opacity: .9;
 }
-    
-/*}*/
 
-/*.pimg2 {*/
-/*    background-image: url('/pictures/img2.jpg');*/
-/*    width: 100%;*/
-/*    height: 400px;*/
-/*    background-position: bottom;*/
-/*}*/
+ h1 {
+    position: relative;
+    top: 50%;
+    text-align: center;
+    color: #fff;
+    font-weight: 600;
+    font-size: 4em;
+    font-family: 'Lobster', cursive;
+}
 
-/*.pimg3 {*/
-/*    background-image: url('/pictures/img3.jpg');*/
-/*    width: 100%;*/
-/*    height: 400px;*/
-    
-/*}*/
+h4 {
+    font-size: 1.5rem;
+    color: #ffffff;
+    font-weight: 600;
+}
 
+/*search bar*/
 .search-box {
     width: 60%;
     margin: 0px auto 0px auto;
     padding: 10px;
 }
 
-/*.popDest {*/
-/*    max-width: 100%;*/
-/*    height: 300px;*/
-/*}*/
-   
+.searchbackground {
+    background-color: #798088;
+    border-top: 5px solid #ebc9a3;
+    height: 70px;
+}
 
+/*Icons section*/
+.icon {
+   -webkit-filter: invert(25%);
+ }
+ 
+.icons {
+    margin: 40px;
+}
 
+/*Popular holyday destination section */
+.col-sm-4 p {
+    color: #535353;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #51463c;
+    border-color: #c7935f;
+}
+
+/*Footer*/
 .footer {
     width: 100%;
     height: 550px;
@@ -135,3 +123,27 @@ h4 {
 /*    display: table-cell;*/
 /*    vertical-align: middle;*/
 /*}*/
+
+/*}*/
+
+/*.pimg2 {*/
+/*    background-image: url('/pictures/img2.jpg');*/
+/*    width: 100%;*/
+/*    height: 400px;*/
+/*    background-position: bottom;*/
+/*}*/
+
+/*.pimg3 {*/
+/*    background-image: url('/pictures/img3.jpg');*/
+/*    width: 100%;*/
+/*    height: 400px;*/
+    
+/*}*/
+
+
+
+/*.popDest {*/
+/*    max-width: 100%;*/
+/*    height: 300px;*/
+/*}*/
+   

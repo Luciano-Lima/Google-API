@@ -1,6 +1,6 @@
 //  seach box
 
-(function() {
+  (function() {
     var cx = '000839719132049059247:-xxothaal9a';
     var gcse = document.createElement('script');
     gcse.type = 'text/javascript';
@@ -9,11 +9,13 @@
     var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(gcse, s);
   })();
+
+
 
     
 // search results
 
-(function() {
+  (function() {
     var cx = '000839719132049059247:-xxothaal9a';
     var gcse = document.createElement('script');
     gcse.type = 'text/javascript';
@@ -22,31 +24,38 @@
     var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(gcse, s);
   })();
+
 
 
 
 // map
 
 function initMap() {
-  var london = {lat: 51.507351, lng: -0.127758}
+  var algarve = {lat: 37.017956, lng: 37.017956}
+  var barbados = {lat: 13.193887, lng: -59.543198}
+  var palawan = {lat: 9.834949, lng: -118.738358}
+  var caynam = {lat: 10.128920, lng: 106.333740};
   
   var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 4,
-    center: london
+    zoom: 1,
+    center: algarve,
+    mapTypeControl : true,
+    mapTypeControlOptions: { style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
+    mapTypeId: ['roadmap', 'terrain']}
+   
   });
-  var marker = new google.maps.Marker({
-    position: london, 
-    map: map
-  });
+  
+  var marker = new google.maps.Marker({position: algarve, map: map, title: 'Algarve'})
+  var marker = new google.maps.Marker({position: barbados, map: map, title: 'Barbados'})
+  var marker = new google.maps.Marker({position: palawan, map: map, title: 'Palawan'})
+  var marker = new google.maps.Marker({position: caynam, map: map, title: 'Caynam'});
 }
 
-// var map;
-// function initMap() {
-//   map = new google.maps.Map(document.getElementById("map"),{
-//     center: {lat: 51.507351, lng: -0.127758},
-//     zoon: 8
-//   });
-// }
+
+
+
+
+
 
 // google sign
 
