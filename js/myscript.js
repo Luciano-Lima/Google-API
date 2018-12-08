@@ -1,6 +1,5 @@
 //  seach box
-
-  (function() {
+(function() {
     var cx = '000839719132049059247:-xxothaal9a';
     var gcse = document.createElement('script');
     gcse.type = 'text/javascript';
@@ -9,13 +8,9 @@
     var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(gcse, s);
   })();
-
-
-
-    
+  
 // search results
-
-  (function() {
+(function() {
     var cx = '000839719132049059247:-xxothaal9a';
     var gcse = document.createElement('script');
     gcse.type = 'text/javascript';
@@ -24,38 +19,73 @@
     var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(gcse, s);
   })();
-
-
 
 
 // map
-
 function initMap() {
-  var algarve = {lat: 37.017956, lng: 37.017956}
-  var barbados = {lat: 13.193887, lng: -59.543198}
-  var palawan = {lat: 9.834949, lng: -118.738358}
-  var caynam = {lat: 10.128920, lng: 106.333740};
-  
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 1,
-    center: algarve,
+    center: {lat:37.017956, lng: 37.017956},
     mapTypeControl : true,
     mapTypeControlOptions: { style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
     mapTypeId: ['roadmap', 'terrain']}
    
   });
   
-  var marker = new google.maps.Marker({position: algarve, map: map, title: 'Algarve'})
-  var marker = new google.maps.Marker({position: barbados, map: map, title: 'Barbados'})
-  var marker = new google.maps.Marker({position: palawan, map: map, title: 'Palawan'})
-  var marker = new google.maps.Marker({position: caynam, map: map, title: 'Caynam'});
+  // add marker to the map
+  var markers = [
+    {coords: {lat: 37.019356, lng: -7.930440},
+      icon: '/pictures/portugal_flag.png',
+      content: '<h3>Algarve PT</h3>' + '<p>The Algarve is the southernmost region of continental Portugal. It has an area of 4,997 km2 (1,929 sq mi) with 451,006 permanent inhabitants.</p>', 
+    },
+    
+    {coords: {lat: 13.193887, lng: -59.543198},
+      icon: '/pictures/barbados_flag.png',
+      content: '<h3>Barbados </h3>' + 
+      '<p>Barbados is an island country in the Caribbean Sea. The island has an area of about 430 km². Its capital and largest city is Bridgetown.</p>',
+    },
+    
+    {coords: {lat: 9.740696, lng: 118.730072},
+      icon: '/pictures/palawan_flag.png',
+      content: '<h3>Palawan</h3>' + 
+      '<p>Palawan officially the Province of Palawan is an archipelagic province of the Philippines that is located in the region of Mimaripa.</p>', 
+    },
+    
+    {coords: {lat: 19.292997, lng: -81.366806},
+      icon: '/pictures/caynam_flag.png',
+      content: '<h3>Caynam</h3>' + 
+      '<p>The Cayman Islands are a group of islands in the Caribbean Sea approximately ninety miles south of Cuba.</p>',
+    }
+  ];
+    
+  // loop trouhg the markers
+  for (var i = 0; i < markers.length; i++) {
+    addMarker(markers[i]);
+  }
+    
+  // add marker function
+  function addMarker(text) {
+    var marker = new google.maps.Marker({
+      position: text.coords,
+      map:map,
+  });
+  
+  // Check text content
+  if(text.content){
+    var infoWindow = new google.maps.InfoWindow({
+      content:text.content
+  });
+          
+  if(text.icon) {
+    marker.setIcon(text.icon);
+    }
+  }
+    
+  marker.addListener('click', function(){
+      infoWindow.open(map, marker);
+    });
+  }
 }
-
-
-
-
-
-
 
 // google sign
 
@@ -76,9 +106,3 @@ function onSuccess(googleUser) {
         'onfailure': onFailure
       });
     }
-    
-    
-
-
-
-        
