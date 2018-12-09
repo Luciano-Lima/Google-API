@@ -114,6 +114,21 @@ h4 {
     overflow: hidden;
 }
 
+#my-signin2 {
+    display: inline-block;
+}
+
+.abcRioButtonBlue .abcRioButtonIcon {
+    background-color: #5b5043;
+    -webkit-border-radius: 1px;
+    border-radius: 1px;
+}
+.social-media {
+    font-size:40px;
+    margin: 20px;
+    color: #5b5043;
+}
+
 
 
 
