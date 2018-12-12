@@ -10,26 +10,20 @@ html, body {
     line-height: 1.8em;
     color: black;
     background-color: chocolate;
-}
-
-#map  {
-    height: 100%;
-    
     
 }
 
 .container-fluid {
     padding-right: 0px; 
     padding-left: 0px; 
-   
-}
-
+ }
 
 /*header*/
 .bg-light {
-    background-color: #6c757d!important;
+    background-color: #3088ca!important;
     padding: 15px;
     border-bottom: 4px solid #efc093;
+    opacity: .9;
 } 
 
 .fa-plane, .fa-globe {
@@ -61,29 +55,40 @@ html, body {
     position: relative;
     top: 50%;
     text-align: center;
-    color: #fff;
+    color:  #f1c89d;
     font-weight: 600;
     font-size: 4em;
     font-family: 'Lobster', cursive;
 }
 
+/*main section*/
+
+h2, h3 {
+    margin: 20px;
+    color: #f1c89d;
+    font-weight: 700;
+}
+
+/*h4 footer*/
 h4 {
-    font-size: 1.5rem;
-    color: #ffffff;
-    font-weight: 600;
+    margin:20px;
+    color: #f1c89d;
+    font-weight: 700;
+    font-size: 1.2em;
 }
 
 /*search bar*/
 .search-box {
-    width: 60%;
+    width: 40%;
     margin: 0px auto 0px auto;
     padding: 10px;
 }
 
 .searchbackground {
-    background-color: #798088;
+    background-color: #4999cf;
     border-top: 5px solid #ebc9a3;
     height: 70px;
+    opacity: .9;
 }
 
 /*Icons section*/
@@ -106,59 +111,148 @@ h4 {
     border-color: #c7935f;
 }
 
-/*Footer*/
+.carousel-item {
+    padding-bottom: 50px;
+}
+
+/* section footer*/
 .footer {
     width: 100%;
-    height: 550px;
-    background-color: #798088;
-    overflow: hidden;
+    background-image: url('/pictures/sky.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
+/*.bg_img {*/
+/*    opacity: .7;*/
+/*    background-size: cover*/
+/*}*/
+
+
+
+
+.header-wrapper {
+    width: 100%;
+    height: 50px;
+    background-color: #d77520;
+    text-align: center;
+    border-bottom: 4px solid #f3cea7;
+}
+
+/*map*/
+#map  {
+    height: 320px;
+}
+
+.gm-style-mtc {
+    width: 80px;
+}
+
+
+#description {
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+#infowindow-content .title {
+  font-weight: bold;
+}
+
+#infowindow-content {
+  display: none;
+}
+
+#map #infowindow-content {
+  display: inline;
+}
+
+.pac-card {
+  margin: 10px 10px 0 0;
+  border-radius: 2px 0 0 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+  font-family: Roboto;
+}
+
+#pac-container {
+  padding-bottom: 12px;
+  margin-right: 12px;
+}
+
+.pac-controls {
+  display: inline-block;
+  padding: 5px 11px;
+}
+
+.pac-controls label {
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+#pac-input {
+  background-color: #fff;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+  margin-top: 10px;
+  text-align: center;
+  text-overflow: ellipsis;
+  width: 50%;
+}
+
+#pac-input:focus {
+  border-color: #4d90fe;
+}
+
+#title {
+  color: #fff;
+  background-color: #4d90fe;
+  font-size: 25px;
+  font-weight: 500;
+  padding: 6px 12px;
+}
+#target {
+  width: 345px;
+}
+
+/*google sign */
 
 #my-signin2 {
     display: inline-block;
 }
+
 
 .abcRioButtonBlue .abcRioButtonIcon {
     background-color: #5b5043;
     -webkit-border-radius: 1px;
     border-radius: 1px;
 }
+
+/*social media */
 .social-media {
     font-size:40px;
     margin: 20px;
     color: #5b5043;
 }
 
+.contact_form {
+    margin-top: 20px;
+}
+
+
+footer {
+    width: 100%;
+    height: 70px;
+    background-color: #3696c5;
+    text-align: center;
+    border-bottom: 4px solid #f3cea7;
+    opacity: .9;
+}
 
 
 
-/*h1 {*/
-/*    text-align: center;*/
-/*    font-weight: 800;*/
-/*    display: table-cell;*/
-/*    vertical-align: middle;*/
-/*}*/
-
-/*}*/
-
-/*.pimg2 {*/
-/*    background-image: url('/pictures/img2.jpg');*/
-/*    width: 100%;*/
-/*    height: 400px;*/
-/*    background-position: bottom;*/
-/*}*/
-
-/*.pimg3 {*/
-/*    background-image: url('/pictures/img3.jpg');*/
-/*    width: 100%;*/
-/*    height: 400px;*/
-    
-/*}*/
-
-
-
-/*.popDest {*/
-/*    max-width: 100%;*/
-/*    height: 300px;*/
-/*}*/
-   
