@@ -10,13 +10,7 @@ html, body {
     line-height: 1.8em;
     color: black;
     background-color: chocolate;
-    
 }
-
-.container-fluid {
-    padding-right: 0px; 
-    padding-left: 0px; 
- }
 
 /*header*/
 .bg-light {
@@ -72,7 +66,7 @@ h2, h3 {
 /*h4 footer*/
 h4 {
     margin:20px;
-    color: #f1c89d;
+    color: #535353;
     font-weight: 700;
     font-size: 1.2em;
 }
@@ -101,6 +95,11 @@ h4 {
 }
 
 /*Popular holyday destination section */
+
+.container-fluid {
+    width: 70%;
+}
+
 .col-sm-4 p {
     color: #535353;
 }
@@ -118,7 +117,7 @@ h4 {
 /* section footer*/
 .footer {
     width: 100%;
-    background-image: url('/pictures/sky.jpeg');
+    background-image: url('/pictures/sky.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -141,7 +140,7 @@ h4 {
 
 /*map*/
 #map  {
-    height: 320px;
+    height: 220px;
 }
 
 .gm-style-mtc {
@@ -159,9 +158,9 @@ h4 {
   font-weight: bold;
 }
 
-#infowindow-content {
-  display: none;
-}
+/*#infowindow-content {*/
+/*  display: none;*/
+/*}*/
 
 #map #infowindow-content {
   display: inline;
@@ -195,14 +194,15 @@ h4 {
 }
 
 #pac-input {
-  background-color: #fff;
+  background-color: #dde8f0;
   font-family: Roboto;
   font-size: 15px;
   font-weight: 300;
   margin-top: 10px;
   text-align: center;
   text-overflow: ellipsis;
-  width: 50%;
+  width: 100%;
+  border: 1px solid #eebf92;
 }
 
 #pac-input:focus {
@@ -240,9 +240,7 @@ h4 {
     color: #5b5043;
 }
 
-.contact_form {
-    margin-top: 20px;
-}
+
 
 
 footer {
@@ -254,5 +252,7 @@ footer {
     opacity: .9;
 }
 
-
+ul {
+    list-style: none;
+}
 
