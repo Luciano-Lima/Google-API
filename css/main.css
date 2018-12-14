@@ -11,14 +11,22 @@ html, body {
     line-height: 1.8em;
     color: black;
 }
-
+        /*gobal styling*/
 .bg-cover {
     background-image: url('/pictures/background.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-/*header*/
+.container {
+    padding-bottom: 20px;
+}
+
+section {
+    margin-bottom: 50px;
+}
+
+            /*header*/
 .bg-light {
     background-color: #950000 !important;
     border-bottom: 2px solid #efc093;
@@ -26,7 +34,7 @@ html, body {
 
 .fa-plane, .fa-globe {
     padding-right: 10px;
-    color: #c9854b;
+    color: #f3cea7;
 }
 
 .navbar-light .navbar-brand {
@@ -53,59 +61,53 @@ html, body {
     position: relative;
     top: 50%;
     text-align: center;
-    color:  #f1c89d;
+    color:  #d69b39;
     font-weight: 600;
-    font-size: 4em;
+    font-size: 3em;
     font-family: 'Slabo 27px', serif;
-    
 }
 
 .h1-bg {
-   
-    top: 50%;
+   top: 50%;
     position: relative;
-    
 }
 
-/*main section*/
+        /*main section*/
 
 h2, h3 {
-    margin: 20px;
-    color: #f1c89d;
-    font-weight: 700;
-}
-
-/*h4 footer*/
-h4 {
-    margin:20px;
+    padding: 15px;
     color: #535353;
     font-weight: 700;
-    font-size: 1.2em;
 }
 
-/*search bar*/
+        /*h4 footer*/
+h5 {
+    padding:15px;
+    color: #535353;
+    font-weight: 700;
+    /*font-size: 1.2em;*/
+}
+
+        /*search bar*/
+        
 .search-box {
     width: 40%;
     margin: 0px auto 0px auto;
     padding: 2px;
-    
 }
 
 
-/*Icons section*/
+        /*Icons section*/
 .icon {
    -webkit-filter: invert(25%);
+   padding: 20px;
  }
  
 .icons {
-    margin: 40px;
+    margin: 0px 40px 0px 40px;
 }
 
-/*Popular holyday destination section */
-
-.container-fluid {
-    width: 70%;
-}
+    /*Popular holyday destination section */
 
 .col-sm-4 p {
     color: #535353;
@@ -117,16 +119,9 @@ h4 {
     border-color: #c7935f;
 }
 
-.carousel-item {
-    padding-bottom: 50px;
-}
-
-/* section footer*/
-
-/*map*/
+        /*map*/
 #map  {
     height: 220px;
-   
 }
 
 .gm-style-mtc {
@@ -144,10 +139,6 @@ h4 {
 #infowindow-content .title {
   font-weight: bold;
 }
-
-/*#infowindow-content {*/
-/*  display: none;*/
-/*}*/
 
 #map #infowindow-content {
   display: inline;
@@ -207,12 +198,11 @@ h4 {
   width: 345px;
 }
 
-/*google sign */
+        /*google sign */
 
 #my-signin2 {
     display: inline-block;
 }
-
 
 .abcRioButtonBlue {
     background-color: #b0a79c;
@@ -224,26 +214,26 @@ h4 {
 .social-media {
     font-size:40px;
     margin: 20px;
-    color: #5b5043;
+    color: #5d5e5d;
 }
 
-
-
-
+        /*footer*/
+        
 footer {
     width: 100%;
-    height: 70px;
     background-color: #a21515;
     text-align: center;
     border-bottom: 2px solid #f3cea7;
-    opacity: .9;
-    
+    padding: 15px;
+    color: white;
+    font-weight: 600;
 }
 
 ul {
     list-style: none;
 }
 
-section {
-    margin-bottom: 50px;
+.fa-home, .fa-envelope-o, .fa-phone {
+    font-size: 30px;
+    color: #5d5e5d;
 }
