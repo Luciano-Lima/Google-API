@@ -8,42 +8,39 @@
     <title>Google API</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
     <link rel="stylesheet" href="css/main.css" type="text/css">
     
 </head>
 <body>
-    
-    
-        <!--navegation menu-->
-        
-        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-            <a class="navbar-brand" href="#"><i class="fa fa-plane" aria-hidden="true"></i>WeGetYouThere</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-item nav-link active text-white" href="#">Home <span class="sr-only">(current)</span></a>
-                    <a class="nav-item nav-link text-white" href="#">Features</a>
-                    <a class="nav-item nav-link text-white" href="#">Pricing</a>
-                </div>
+    <!--navegation menu-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <a class="navbar-brand" href="#"><i class="fa fa-plane" aria-hidden="true"></i>WeGetYouThere</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active text-white" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link text-white" href="#">Holidays</a>
+                <a class="nav-item nav-link text-white" href="#">Pricing</a>
             </div>
-        </nav>
-        
-        <!--heading -->
-        <div class="pimg1">
-            <h1>Explore the World <i class="fa fa-globe" aria-hidden="true"></i></h1>
         </div>
-       
-        <!--Google Search Bar --> 
-        <div class="searchbackground text-center">
-           <div class="search-box ">
-                <gcse:searchbox-only></gcse:searchbox-only>
-                <gcse:searchresults defaultToImageSearch="true"></gcse:searchresults>
-            </div> 
+    </nav>
+    <!--heading -->
+    <div class="pimg1">
+        <div class="h1-bg">
+            <h1 class="animated zoomInDown delay-2s">Explore the World <i class="fa fa-globe" aria-hidden="true"></i></h1>
         </div>
-  
-    <div class="container">
+    </div>
+    <!--Google Search Bar --> 
+    <div class="searchbackground text-center">
+        <div class="search-box ">
+            <gcse:searchbox-only></gcse:searchbox-only>
+            <gcse:searchresults defaultToImageSearch="true"></gcse:searchresults>
+        </div> 
+    </div>
+    <div class="container bg-cover">
         <div class="row icons">
             <div class="col-sm-4 text-center">
                 <img class="icon" src="/pictures/beach-icon.png"></img>
@@ -60,15 +57,14 @@
         </div>
     </div>
     <!--Popular destination section-->
-    <section class="container-fluid popDest">
+    <section class="container bg-cover">
         <h2 class="text-center">Popular Holyday Destination</h2>
         <div class="row">
             <div class="col-md-3">
                 <div class="card text-white bg-secondary text-center">
                     <img class="card-img-top img-thumbnail" src="/pictures/barbados.jpg" alt="Barbados"</img>
                     <div class="card-body">
-                        <h5 class="card-title text-danger">Barbados</h5>
-                       
+                        <h5 class="card-title">Barbados</h5>
                         <a href="#" class="btn btn-primary">Book Now</a>
                     </div>
                 </div>
@@ -102,9 +98,8 @@
             </div>
         </div>
     </section>
-    
     <!--most visited cities section-->
-    <section class="container-fluid">
+    <section class="container bg-cover">
         <h3 class="text-center">Most Visited Cities</h3>
         <div class="row">
             <div class="col-md-12">
@@ -154,66 +149,49 @@
             </div>
         </div>
     </section>
-    
-    <!--footer-->
-
-    <div class="footer">
-        
-        <!--<div class="container-fluid">-->
-            <div class="row">
-                <div class="col-md-4 text-center">
-                    <h4>Polular Holyday Destination Locations</h4>
-                    <input id="pac-input" class="controls" type="text" placeholder="Find your next Destination">
-                    <div id="map"></div>
-                </div>
-                <div class="col-md-4 text-center">
-                    <p>Join us for the finest holiday inspirations and exclusive deals</p>
-                    <!--gogole sign up-->
-                    <div id="my-signin2"></div>
-                    <!--social media icons-->
-                    <div class="social-media">
-                        <span>
-                            <i class="fa fa-facebook" aria-hidden="true"></i>
-                            <i class="fa fa-instagram" aria-hidden="true"></i>
-                            <i class="fa fa-twitter" aria-hidden="true"></i>
-                        </span>
-                    </div>
-                    <!--<div class="contact_form text-center">-->
-                    <!--    <form>-->
-                    <!--        <input type="text" name="name" class="form-control" id="fullname" placeholder="Name" required/>-->
-                    <!--        <input type="text" name="email" class="form-control" id="email" placeholder="Email" required/>-->
-                    <!--        <textarea rows="3" name="message" class="form-control" id="message" placeholder="Message" required></textarea>-->
-                    <!--        <button type="submit" class="btn btn-secondary center-block">Submit</button>-->
-                    <!--    </form>-->
-                    <!--</div>-->
-                </div>
-                <div class="col-md-4 text-center">
-                    <h4>Get in Touch</h4>
-                    <ul>
-                        <li>
-                            <i class="fa fa-home" aria-hidden="true"></i>
-                            <p>21 Ladywell Road Hounslow Middlesex TW1 5UEA</p>
-                        </li>
-                    </ul>
-                    <ul>
-                        <li>
-                            <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                            <p>info@wegetyouthere.com</p>
-                        </li>
-                    </ul>
-                    <ul>
-                        <li>
-                            <i class="fa fa-phone" aria-hidden="true"></i>
-                            <p>0205 209 1213</p>
-                        </li>
-                    </ul>
-                    
-                    
-                    
+    <section class="container bg-cover">
+        <div class="row">
+            <div class="col-md-4 text-center">
+                h4>Polular Holyday Destination Locations</h4>
+                <input id="pac-input" class="controls" type="text" placeholder="Find your next Destination">
+                <div id="map"></div>
+            </div>
+            <div class="col-md-4 text-center">
+                <p>Join us for the finest holiday inspirations and exclusive deals</p>
+                <!--gogole sign up-->
+                <div id="my-signin2"></div>
+                <!--social media icons-->
+                <div class="social-media">
+                    <span>
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                    </span>
                 </div>
             </div>
-        <!--</div>-->
-    </div>
+            <div class="col-md-4 text-center">
+                <h4>Get in Touch</h4>
+                <ul>
+                    <li>
+                        <i class="fa fa-home" aria-hidden="true"></i>
+                        <p>21 Ladywell Road Hounslow Middlesex TW1 5UEA</p>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                        <p>info@wegetyouthere.com</p>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                        <p>0205 209 1213</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
     <footer>
        <span>Popular Holyday Destination Locations</span>
     </footer>

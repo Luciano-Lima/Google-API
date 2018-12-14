@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('https://fonts.googleapis.com/css?family=Slabo+27px');
 
 html, body {
     height: 100%;
@@ -9,15 +10,18 @@ html, body {
     font-weight: 400;
     line-height: 1.8em;
     color: black;
-    background-color: chocolate;
+}
+
+.bg-cover {
+    background-image: url('/pictures/background.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 /*header*/
 .bg-light {
-    background-color: #3088ca!important;
-    padding: 15px;
-    border-bottom: 4px solid #efc093;
-    opacity: .9;
+    background-color: #950000 !important;
+    border-bottom: 2px solid #efc093;
 } 
 
 .fa-plane, .fa-globe {
@@ -52,7 +56,15 @@ html, body {
     color:  #f1c89d;
     font-weight: 600;
     font-size: 4em;
-    font-family: 'Lobster', cursive;
+    font-family: 'Slabo 27px', serif;
+    
+}
+
+.h1-bg {
+   
+    top: 50%;
+    position: relative;
+    
 }
 
 /*main section*/
@@ -75,15 +87,10 @@ h4 {
 .search-box {
     width: 40%;
     margin: 0px auto 0px auto;
-    padding: 10px;
+    padding: 2px;
+    
 }
 
-.searchbackground {
-    background-color: #4999cf;
-    border-top: 5px solid #ebc9a3;
-    height: 70px;
-    opacity: .9;
-}
 
 /*Icons section*/
 .icon {
@@ -115,36 +122,16 @@ h4 {
 }
 
 /* section footer*/
-.footer {
-    width: 100%;
-    background-image: url('/pictures/sky.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-/*.bg_img {*/
-/*    opacity: .7;*/
-/*    background-size: cover*/
-/*}*/
-
-
-
-
-.header-wrapper {
-    width: 100%;
-    height: 50px;
-    background-color: #d77520;
-    text-align: center;
-    border-bottom: 4px solid #f3cea7;
-}
 
 /*map*/
 #map  {
     height: 220px;
+   
 }
 
 .gm-style-mtc {
     width: 80px;
+    margin-left: 5px;
 }
 
 
@@ -227,8 +214,8 @@ h4 {
 }
 
 
-.abcRioButtonBlue .abcRioButtonIcon {
-    background-color: #5b5043;
+.abcRioButtonBlue {
+    background-color: #b0a79c;
     -webkit-border-radius: 1px;
     border-radius: 1px;
 }
@@ -246,13 +233,17 @@ h4 {
 footer {
     width: 100%;
     height: 70px;
-    background-color: #3696c5;
+    background-color: #a21515;
     text-align: center;
-    border-bottom: 4px solid #f3cea7;
+    border-bottom: 2px solid #f3cea7;
     opacity: .9;
+    
 }
 
 ul {
     list-style: none;
 }
 
+section {
+    margin-bottom: 50px;
+}
