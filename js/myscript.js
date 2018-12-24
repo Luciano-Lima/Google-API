@@ -4,28 +4,33 @@ function initAutocomplete() {
   var map = new google.maps.Map(document.getElementById('map'), {
     center: {lat:37.017956, lng: 37.017956},
     zoom: 1,
-    mapTypeControlOptions: { style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
-    mapTypeId: ['roadmap', 'terrain']}
-});
+    mapTypeControl: false,
+  });
 
-var styles = [{"featureType": "landscape", "stylers": [{"saturation": -100}, {"lightness": 65}, {"visibility": "on"}]}, {"featureType": "poi", "stylers": [{"saturation": -100}, {"lightness": 51}, {"visibility": "simplified"}]}, {"featureType": "road.highway", "stylers": [{"saturation": -100}, {"visibility": "simplified"}]}, {"featureType": "road.arterial", "stylers": [{"saturation": -100}, {"lightness": 30}, {"visibility": "on"}]}, {"featureType": "road.local", "stylers": [{"saturation": -100}, {"lightness": 40}, {"visibility": "on"}]}, {"featureType": "transit", "stylers": [{"saturation": -100}, {"visibility": "simplified"}]}, {"featureType": "administrative.province", "stylers": [{"visibility": "off"}]}, {"featureType": "water", "elementType": "labels", "stylers": [{"visibility": "on"}, {"lightness": -25}, {"saturation": -100}]}, {"featureType": "water", "elementType": "geometry", "stylers": [{"hue": "#ffff00"}, {"lightness": -25}, {"saturation": -97}]}];
-
-map.set('styles', styles);
-
-// add marker to the map
-  var markers = [
-    {coords: {lat: 37.019356, lng: -7.930440},
-      icon: '/pictures/portugal_flag.png',
-      content: '<h3>Algarve PT</h3>' + '<p>The Algarve is the southernmost region of continental Portugal. It has an area of 4,997 km2 (1,929 sq mi) with 451,006 permanent inhabitants.</p>', 
+  var styles = [{"featureType": "landscape", "stylers": [{"saturation": -100}, {"lightness": 65}, {"visibility": "on"}]}, 
+  {"featureType": "poi", "stylers": [{"saturation": -100}, {"lightness": 51}, {"visibility": "simplified"}]}, 
+  {"featureType": "road.highway", "stylers": [{"saturation": -100}, {"visibility": "simplified"}]}, 
+  {"featureType": "road.arterial", "stylers": [{"saturation": -100}, {"lightness": 30}, {"visibility": "on"}]},
+  {"featureType": "road.local", "stylers": [{"saturation": -100}, {"lightness": 40}, {"visibility": "on"}]}, 
+  {"featureType": "transit", "stylers": [{"saturation": -100}, {"visibility": "simplified"}]},
+  {"featureType": "administrative.province", "stylers": [{"visibility": "off"}]}, 
+  {"featureType": "water", "elementType": "labels", "stylers": [{"visibility": "on"}, {"lightness": -25}, {"saturation": -100}]},
+  {"featureType": "water", "elementType": "geometry", "stylers": [{"hue": "#ffff00"}, {"lightness": -25}, {"saturation": -97}]}];
+    map.set('styles', styles);
+    
+    var markers = [
+      {coords: {lat: 37.019356, lng: -7.930440}, 
+      icon: '/pictures/portugal_flag.png',  
+      content: '<h3>Algarve PT</h3>' + '<p>The Algarve is the southernmost region of continental Portugal. It has an area of 4,997 km2 (1,929 sq mi) with 451,006 permanent inhabitants.</p>',
     },
     
-    {coords: {lat: 13.193887, lng: -59.543198},
+      {coords: {lat: 13.193887, lng: -59.543198},
       icon: '/pictures/barbados_flag.png',
       content: '<h3>Barbados </h3>' + 
       '<p>Barbados is an island country in the Caribbean Sea. The island has an area of about 430 kmÂ². Its capital and largest city is Bridgetown.</p>',
     },
     
-    {coords: {lat: 9.740696, lng: 118.730072},
+      {coords: {lat: 9.740696, lng: 118.730072},
       icon: '/pictures/palawan_flag.png',
       content: '<h3>Palawan</h3>' + 
       '<p>Palawan officially the Province of Palawan is an archipelagic province of the Philippines that is located in the region of Mimaripa.</p>', 
@@ -38,7 +43,7 @@ map.set('styles', styles);
     }
   ];
   
-    
+   
   // loop trouhg the markers
   for (var i = 0; i < markers.length; i++) {
     addMarker(markers[i]);
@@ -54,6 +59,7 @@ map.set('styles', styles);
   // zoonm when clicking on the marker
   google.maps.event.addListener(marker,'click',function() {
     var pos = map.getZoom();
+    
       map.setZoom(8);
       map.setCenter(marker.getPosition());
       window.setTimeout(function() {map.setZoom(pos);},6000);
@@ -61,30 +67,30 @@ map.set('styles', styles);
   
   // Check text content
   if(text.content){
-    var infoWindow = new google.maps.InfoWindow({
-      content:text.content
+  var infoWindow = new google.maps.InfoWindow({
+      content:text.content,
   });
           
   if(text.icon) {
     marker.setIcon(text.icon);
     }
-  }
-    
+}
   marker.addListener('click', function(){
       infoWindow.open(map, marker);
-      infoWindow.setContent(html);
+      
     });
-  }
-  
-  // Map search box
+}
+
+
+// Map search box
   var input = document.getElementById('pac-input');
   var searchBox = new google.maps.places.SearchBox(input);
-    // map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+  map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
-        // // Bias the SearchBox results towards current map's viewport.
-        // map.addListener('bounds_changed', function() {
-        //   searchBox.setBounds(map.getBounds());
-        // });
+  // Bias the SearchBox results towards current map's viewport.
+  map.addListener('bounds_changed', function() {
+    searchBox.setBounds(map.getBounds());
+  });
   
   // add markers for the search box resultes 
   var markers = [];
@@ -138,7 +144,6 @@ map.set('styles', styles);
     });
     map.fitBounds(bounds);
 });
-
 }
 
 
@@ -152,8 +157,7 @@ map.set('styles', styles);
 
 
 
-
-  // seach box 
+// seach box 
   
 (function() {
     var cx = '000839719132049059247:-xxothaal9a';
