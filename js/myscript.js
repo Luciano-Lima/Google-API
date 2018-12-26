@@ -1,3 +1,34 @@
+// var xhr = new XMLHttpRequest();
+
+// xhr.onreadystatechange = function() {
+//   if (this.readyState == 4 && this.status == 200) {
+//     document.getElementById('data').innerHTML = this.responseText;
+//     console.log(data);
+//   }
+  
+// };
+//   xhr.open('GET', 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=37.019356,-7.930440&radius=1500&type=restaurant&key=AIzaSyAXLJDTBexaPjcYpLLdLEL117qR0_7w270',true);
+
+//   xhr.send();
+  
+  
+//   function reqListener () {
+//   console.log(this.responseText);
+// }
+
+// var oReq = new XMLHttpRequest();
+// oReq.addEventListener("data", reqListener);
+// oReq.open("GET", 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=37.019356,-7.930440&radius=1500&type=restaurant&key=AIzaSyAXLJDTBexaPjcYpLLdLEL117qR0_7w270');
+// oReq.send();
+
+  
+  
+  
+  
+  
+  
+
+
 // map
 
 function initAutocomplete() {

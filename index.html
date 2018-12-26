@@ -21,18 +21,21 @@
         </button>
         <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link active text-white" href="#">Home <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link text-white" href="#">Holidays</a>
-                <a class="nav-item nav-link text-white" href="#">Contact</a>
+                <a class="nav-item nav-link active text-white slide-section" href="">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link text-white slide-section" href="#holiday">Holidays</a>
+                <a class="nav-item nav-link text-white slide-section" href="#contact">Contact</a>
             </div>
         </div>
     </nav>
+    
     <!--heading -->
     <div class="pimg1">
         <div class="h1-bg">
             <h1 class="animated zoomInDown delay-2s">Explore the World <i class="fa fa-globe" aria-hidden="true"></i></h1>
         </div>
     </div>
+    
+    
     <!--Google Search Bar --> 
     <div class="searchbackground text-center">
         <div class="search-box ">
@@ -57,7 +60,7 @@
         </div>
     </section>
     <!--Popular destination section-->
-    <section class="container bg-cover">
+    <section id="holiday" class="container bg-cover">
         <h2 class="text-center">Popular Holiday Destination</h2>
         <div class="row">
             <div class="col-md-3">
@@ -149,7 +152,7 @@
             </div>
         </div>
     </section>
-    <section class="container bg-cover">
+    <section id="contact" class="container bg-cover">
         <div class="row">
            <div class="col-md-4 text-center">
                 <h5>Popular Holiday Destination Locations</h5>
@@ -195,12 +198,15 @@
         </div>
     </section>
     <footer>
+        <!--to get the json api file from google maps-->
+        <div id="data"></div>
        <span>&copyWeGetYouThere 2019</span>
     </footer>
 </body>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.js"integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="crossorigin="anonymous"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>-->
     <script src="js/myscript.js"></script>
+    <script src="/jquery/jquery.js"></script>
     <!--google maps-->
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXLJDTBexaPjcYpLLdLEL117qR0_7w270&libraries=places&callback=initAutocomplete"></script>
     <script async defer src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
