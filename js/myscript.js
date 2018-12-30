@@ -1,234 +1,308 @@
-// var xhr = new XMLHttpRequest();
-
-// xhr.onreadystatechange = function() {
-//   if (this.readyState == 4 && this.status == 200) {
-//     document.getElementById('data').innerHTML = this.responseText;
-//     console.log(data);
-//   }
-  
-// };
-//   xhr.open('GET', 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=37.019356,-7.930440&radius=1500&type=restaurant&key=AIzaSyAXLJDTBexaPjcYpLLdLEL117qR0_7w270',true);
-
-//   xhr.send();
-  
-  
-//   function reqListener () {
-//   console.log(this.responseText);
-// }
-
-// var oReq = new XMLHttpRequest();
-// oReq.addEventListener("data", reqListener);
-// oReq.open("GET", 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=37.019356,-7.930440&radius=1500&type=restaurant&key=AIzaSyAXLJDTBexaPjcYpLLdLEL117qR0_7w270');
-// oReq.send();
-
-  
-  
-  
-  
-  
-  
-
-
-// map
-
-function initAutocomplete() {
-  var map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat:37.017956, lng: 37.017956},
-    zoom: 1,
-    mapTypeControl: false,
-  });
-
-  var styles = [{"featureType": "landscape", "stylers": [{"saturation": -100}, {"lightness": 65}, {"visibility": "on"}]}, 
-  {"featureType": "poi", "stylers": [{"saturation": -100}, {"lightness": 51}, {"visibility": "simplified"}]}, 
-  {"featureType": "road.highway", "stylers": [{"saturation": -100}, {"visibility": "simplified"}]}, 
-  {"featureType": "road.arterial", "stylers": [{"saturation": -100}, {"lightness": 30}, {"visibility": "on"}]},
-  {"featureType": "road.local", "stylers": [{"saturation": -100}, {"lightness": 40}, {"visibility": "on"}]}, 
-  {"featureType": "transit", "stylers": [{"saturation": -100}, {"visibility": "simplified"}]},
-  {"featureType": "administrative.province", "stylers": [{"visibility": "off"}]}, 
-  {"featureType": "water", "elementType": "labels", "stylers": [{"visibility": "on"}, {"lightness": -25}, {"saturation": -100}]},
-  {"featureType": "water", "elementType": "geometry", "stylers": [{"hue": "#ffff00"}, {"lightness": -25}, {"saturation": -97}]}];
-    map.set('styles', styles);
-    
-    var markers = [
-      {coords: {lat: 37.019356, lng: -7.930440}, 
-      icon: '/pictures/portugal_flag.png',  
-      content: '<h3>Algarve PT</h3>' + '<p>The Algarve is the southernmost region of continental Portugal. It has an area of 4,997 km2 (1,929 sq mi) with 451,006 permanent inhabitants.</p>',
-    },
-    
-      {coords: {lat: 13.193887, lng: -59.543198},
-      icon: '/pictures/barbados_flag.png',
-      content: '<h3>Barbados </h3>' + 
-      '<p>Barbados is an island country in the Caribbean Sea. The island has an area of about 430 kmÂ². Its capital and largest city is Bridgetown.</p>',
-    },
-    
-      {coords: {lat: 9.740696, lng: 118.730072},
-      icon: '/pictures/palawan_flag.png',
-      content: '<h3>Palawan</h3>' + 
-      '<p>Palawan officially the Province of Palawan is an archipelagic province of the Philippines that is located in the region of Mimaripa.</p>', 
-    },
-    
-    {coords: {lat: 19.292997, lng: -81.366806},
-      icon: '/pictures/caynam_flag.png',
-      content: '<h3>Caynam</h3>' + 
-      '<p>The Cayman Islands are a group of islands in the Caribbean Sea approximately ninety miles south of Cuba.</p>',
-    }
-  ];
-  
-   
-  // loop trouhg the markers
-  for (var i = 0; i < markers.length; i++) {
-    addMarker(markers[i]);
-  }
-    
-  // add marker function
-  function addMarker(text) {
-    var marker = new google.maps.Marker({
-      position: text.coords,
-      map:map,
-  });
-  
-  // zoonm when clicking on the marker
-  google.maps.event.addListener(marker,'click',function() {
-    var pos = map.getZoom();
-    
-      map.setZoom(8);
-      map.setCenter(marker.getPosition());
-      window.setTimeout(function() {map.setZoom(pos);},6000);
-  });
-  
-  // Check text content
-  if(text.content){
-  var infoWindow = new google.maps.InfoWindow({
-      content:text.content,
-  });
-          
-  if(text.icon) {
-    marker.setIcon(text.icon);
-    }
-}
-  marker.addListener('click', function(){
-      infoWindow.open(map, marker);
-      
-    });
-}
-
-
-// Map search box
-  var input = document.getElementById('pac-input');
-  var searchBox = new google.maps.places.SearchBox(input);
-  map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-
-  // Bias the SearchBox results towards current map's viewport.
-  map.addListener('bounds_changed', function() {
-    searchBox.setBounds(map.getBounds());
-  });
-  
-  // add markers for the search box resultes 
   var markers = [];
-    // Listen for the event fired when the user selects a prediction and retrieve
-    // more details for that place.
-    searchBox.addListener('places_changed', function() {
-  var places = searchBox.getPlaces();
-    if (places.length == 0) {
-      return;
-    }
-    
-  // Clear out the old markers.
-  markers.forEach(function(marker) {
-  marker.setMap(null);
-  });
-  
-  markers = [];
-
-  // For each place, get the icon, name and location.
-  var bounds = new google.maps.LatLngBounds();
-  
-    places.forEach(function(place) {
-      if (!place.geometry) {
-      console.log("Returned place contains no geometry");
-      return;
-    }
-  var icon = {
-    url: place.icon,
-    size: new google.maps.Size(71, 71),
-    origin: new google.maps.Point(0, 0),
-    anchor: new google.maps.Point(17, 34),
-    scaledSize: new google.maps.Size(25, 25),
+  var places;
+  var autocomplete;
+  var countryRestrict = {'country': 'pt'};
+  var MARKER_PATH = 'https://developers.google.com/maps/documentation/javascript/images/marker_green';
+  var hostnameRegexp = new RegExp('^https?://.+?/');
+  var countries = {
+    'pt': {
+      center: {lat: 37.019356, lng: -7.930440},
+      zoom: 4
+    },
+    'sp': {
+      center: {lat: 40.463669, lng: -3.749220},
+      zoom: 4
+    },
+    'ph': {
+      center: {lat: 9.740696, lng: 118.730072},
+      zoom: 4
+    },
+    'ca': {
+      center: {lat: 13.193887, lng: -59.543198},
+      zoom: 4
+    },
     
   };
-
-    // Create a marker for each place.
-  markers.push(new google.maps.Marker({
-    map: map,
-    icon: icon,
-    title: place.name,
-    position: place.geometry.location,
-    animation: google.maps.Animation.DROP
-  }));
   
-  if (place.geometry.viewport) {
-      // Only geocodes have viewport.
-      bounds.union(place.geometry.viewport);
-    } else {
-      bounds.extend(place.geometry.location);
-    }
+  // initialising the map
+  function initAutocomplete() {
+    var map =  new google.maps.Map(document.getElementById('map'), {
+      // center: {lat: 37.019356, lng: -7.930440},
+      center: countries['pt'].center,
+      zoom: 2,
+      mapTypeId: 'roadmap',
+      mapTypeControl: false
     });
-    map.fitBounds(bounds);
-});
+    
+    //infowindow displaing content for hotel  
+    infoWindow = new google.maps.InfoWindow({
+    content: document.getElementById('info-content')
+  });
+  
+  autocomplete = new google.maps.places.Autocomplete(
+      /** @type {!HTMLInputElement} */ (
+          document.getElementById('autocomplete')), {
+        types: ['(cities)'],
+        componentRestrictions: countryRestrict
+      });
+   places = new google.maps.places.PlacesService(map);
+   
+  autocomplete.addListener('place_changed', onPlaceChanged);
+  
+  //DOM event listener when the user selected a contry
+  document.getElementById('country').addEventListener('change', setAutocompleteCountry);
+  
+  
+  // function to get user country selection and zooming into the city
+  function onPlaceChanged(){
+    var place = autocomplete.getPlace();
+      if(place.geometry) {
+        map.panTo(place.geometry.location);
+        map.setZoom(15);
+        search();
+      }else {
+        document.getElementById('autocomplete').placeholder = 'Enter a city';
+      }
+  }
+  
+  // search for the hotel in selected city
+  function search() {
+    var search = {
+      bounds: map.getBounds(),
+      types: ['lodging']
+      
+    };
+    console.log(search);
+    //get the nearby hotels and place a marker for each
+    places.nearbySearch(search, function(results, status) {
+    if (status === google.maps.places.PlacesServiceStatus.OK) {
+      clearResults();
+      clearMarkers();
+      // Create a marker for each hotel found, and
+      // assign a letter of the alphabetic to each marker icon.
+      for (var i = 0; i < results.length; i++) {
+        var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
+        var markerIcon = MARKER_PATH + markerLetter + '.png';
+        // Use marker animation to drop the icons incrementally on the map.
+        markers[i] = new google.maps.Marker({
+          position: results[i].geometry.location,
+          animation: google.maps.Animation.DROP,
+          icon: markerIcon
+        });
+        // If the user clicks a hotel marker, show the details of that hotel
+        // in an info window.
+        markers[i].placeResult = results[i];
+        google.maps.event.addListener(markers[i], 'click', showInfoWindow);
+        setTimeout(dropMarker(i), i * 100);
+        addResult(results[i], i);
+      }
+    }
+  });
+  }
+  
+  function clearMarkers() {
+  for (var i = 0; i < markers.length; i++) {
+    if (markers[i]) {
+      markers[i].setMap(null);
+    }
+  }
+  markers = [];
+  }
+// Set the country restriction based on user input.
+// Also center and zoom the map on the given country.
+  function setAutocompleteCountry() {
+  var country = document.getElementById('country').value;
+  if (country == 'all') {
+    autocomplete.setComponentRestrictions({'country': []});
+    map.setCenter({lat: 15, lng: 0});
+    map.setZoom(2);
+  } else {
+    autocomplete.setComponentRestrictions({'country': country});
+    map.setCenter(countries[country].center);
+    map.setZoom(countries[country].zoom);
+  }
+  clearResults();
+  clearMarkers();
 }
 
+function dropMarker(i) {
+  return function() {
+    markers[i].setMap(map);
+  };
+}
 
+function addResult(result, i) {
+  var results = document.getElementById('results');
+  var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
+  var markerIcon = MARKER_PATH + markerLetter + '.png';
 
+  var tr = document.createElement('tr');
+  tr.style.backgroundColor = (i % 2 === 0 ? '#F0F0F0' : '#FFFFFF');
+  tr.onclick = function() {
+    google.maps.event.trigger(markers[i], 'click');
+  };
 
+  var iconTd = document.createElement('td');
+  var nameTd = document.createElement('td');
+  var icon = document.createElement('img');
+  icon.src = markerIcon;
+  icon.setAttribute('class', 'placeIcon');
+  icon.setAttribute('className', 'placeIcon');
+  var name = document.createTextNode(result.name);
+  iconTd.appendChild(icon);
+  nameTd.appendChild(name);
+  tr.appendChild(iconTd);
+  tr.appendChild(nameTd);
+  results.appendChild(tr);
+}
 
+function clearResults() {
+  var results = document.getElementById('results');
+  while (results.childNodes[0]) {
+    results.removeChild(results.childNodes[0]);
+  }
+}
 
-
-
-
-
-
-
-// seach box 
-  
-(function() {
-    var cx = '000839719132049059247:-xxothaal9a';
-    var gcse = document.createElement('script');
-    gcse.type = 'text/javascript';
-    gcse.async = true;
-    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(gcse, s);
-  })();
-  
-// search results
-(function() {
-    var cx = '000839719132049059247:-xxothaal9a';
-    var gcse = document.createElement('script');
-    gcse.type = 'text/javascript';
-    gcse.async = true;
-    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(gcse, s);
-  })();
-
-
-// google sign
-
-function onSuccess(googleUser) {
-      console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
-    }
-    function onFailure(error) {
-      console.log(error);
-    }
-    function renderButton() {
-      gapi.signin2.render('my-signin2', {
-        'scope': 'profile email',
-        'width': 240,
-        'height': 50,
-        'longtitle': true,
-        'theme': 'dark',
-        'onsuccess': onSuccess,
-        'onfailure': onFailure
+// Get the place details for a hotel. Show the information in an info window,
+// anchored on the marker for the hotel that the user selected.
+function showInfoWindow() {
+  var marker = this;
+  places.getDetails({placeId: marker.placeResult.place_id},
+      function(place, status) {
+        if (status !== google.maps.places.PlacesServiceStatus.OK) {
+          return;
+        }
+        infoWindow.open(map, marker);
+        buildIWContent(place);
       });
+}
+
+// Load the place information into the HTML elements used by the info window.
+function buildIWContent(place) {
+  document.getElementById('iw-icon').innerHTML = '<img class="hotelIcon" ' +
+      'src="' + place.icon + '"/>';
+  document.getElementById('iw-url').innerHTML = '<b><a href="' + place.url +
+      '">' + place.name + '</a></b>';
+  document.getElementById('iw-address').textContent = place.vicinity;
+
+  if (place.formatted_phone_number) {
+    document.getElementById('iw-phone-row').style.display = '';
+    document.getElementById('iw-phone').textContent =
+        place.formatted_phone_number;
+  } else {
+    document.getElementById('iw-phone-row').style.display = 'none';
+  }
+
+  // Assign a five-star rating to the hotel, using a black star ('&#10029;')
+  // to indicate the rating the hotel has earned, and a white star ('&#10025;')
+  // for the rating points not achieved.
+  if (place.rating) {
+    var ratingHtml = '';
+    for (var i = 0; i < 5; i++) {
+      if (place.rating < (i + 0.5)) {
+        ratingHtml += '&#10025;';
+      } else {
+        ratingHtml += '&#10029;';
+      }
+    document.getElementById('iw-rating-row').style.display = '';
+    document.getElementById('iw-rating').innerHTML = ratingHtml;
     }
+  } else {
+    document.getElementById('iw-rating-row').style.display = 'none';
+  }
+
+  // The regexp isolates the first part of the URL (domain plus subdomain)
+  // to give a short URL for displaying in the info window.
+  if (place.website) {
+    var fullUrl = place.website;
+    var website = hostnameRegexp.exec(place.website);
+    if (website === null) {
+      website = 'http://' + place.website + '/';
+      fullUrl = website;
+    }
+    document.getElementById('iw-website-row').style.display = '';
+    document.getElementById('iw-website').textContent = website;
+  } else {
+    document.getElementById('iw-website-row').style.display = 'none';
+  }
+}
+  
+    
+    // defining the popular destination map markers with infowindow
+    var preSetMarkers = [
+      { coords: {lat: 37.019356, lng: -7.930440},
+        icon: '/pictures/portugal_flag.png',  
+        content: '<h3>Algarve PT</h3>' + '<p>The Algarve is the southernmost region of continental Portugal. It has an area of 4,997 km2 (1,929 sq mi) with 451,006 permanent inhabitants.</p>',
+      },
+      { coords: {lat: 13.193887, lng: -59.543198},
+        icon: '/pictures/barbados_flag.png',
+        content: '<h3>Barbados </h3>' + 
+        '<p>Barbados is an island country in the Caribbean Sea. The island has an area of about 430 kmÂ². Its capital and largest city is Bridgetown.</p>',
+      },
+      { coords: {lat: 9.740696, lng: 118.730072},
+        icon: '/pictures/palawan_flag.png',
+        content: '<h3>Palawan</h3>' + 
+        '<p>Palawan officially the Province of Palawan is an archipelagic province of the Philippines that is located in the region of Mimaripa.</p>', 
+      },
+    
+    { coords: {lat: 40.463669, lng: -3.749220},
+      icon: '/pictures/spain-flag.png',
+      content: '<h3>Tenerife</h3>' + 
+      '<p>Tenerife is the largest and most populated island of the seven Canary Islands. It is also the most populated island of Spain, with a land area of 2,034.38 square</p>',
+    },
+      ];
+      
+      //loop trough the preSetMarkeres
+      for (var i = 0; i < preSetMarkers.length; i++) {
+        addpreSetMarker(preSetMarkers[i]);
+      }
+      
+      
+      //function to add the preSetMarkers to the map
+      function addpreSetMarker(text) {
+        var marker = new google.maps.Marker({
+          position: text.coords,
+          map: map,
+        });
+        
+        //zoom when clicking on each marker
+        google.maps.event.addListener(marker,'click',function() {
+          var pos = map.getZoom();
+          map.setZoom(8);
+          map.setCenter(marker.getPosition());
+          window.setTimeout(function() {map.setZoom(pos);},6000);
+        });
+        
+        //to set the text content and icons
+        if (text.content) {
+          var infoWindow = new google.maps.InfoWindow({
+            content:text.content
+          });
+          
+          if (text.icon) {
+            marker.setIcon(text.icon);
+          }
+        }
+        //listener to call the infowindow 
+        marker.addListener('click', function() {
+          infoWindow.open(map,marker);
+        });
+      }
+      
+      
+      
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
 

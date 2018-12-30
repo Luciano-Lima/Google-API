@@ -1,15 +1,14 @@
 $(document).ready(function() {
-    
+    //to calculate the nav height 
     var navbarHeight = $('.navbar').outerHeight();
     
     $('.slide-section').click(function(e){
-        var linkHref = $(this).attr('href'); 
+        var linkHref = $(this).attr('href');
         
-        // console.log(headerHeight);
         $('html, body').animate({
             scrollTop: $(linkHref).offset().top - navbarHeight
         });
-        
+        //to prevent the # to be added at the end of the the URL
         e.preventDefault(); 
     });
 })
