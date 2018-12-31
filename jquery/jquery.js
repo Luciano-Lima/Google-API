@@ -11,4 +11,14 @@ $(document).ready(function() {
         //to prevent the # to be added at the end of the the URL
         e.preventDefault(); 
     });
+    
+    
+   $(".fa").mouseenter(function(){
+        $(this).addClass("fa-font-size");
+    });
+    
+    $(".fa").mouseleave(function(){
+        $(this).removeClass("fa-font-size");
+    });
+    
 })
