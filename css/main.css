@@ -298,11 +298,18 @@ table {
     display: inline-block;
 }
 
+/*.abcRioButtonBlue {*/
+/*    background-color: #b0a79c;*/
+/*    -webkit-border-radius: 1px;*/
+/*    border-radius: 1px;*/
+/*}*/
+
 .abcRioButtonBlue {
-    background-color: #b0a79c;
-    -webkit-border-radius: 1px;
-    border-radius: 1px;
+    background-color: #acdbff7a;
+    border: none;
+    color: #fff;
 }
+
 
         /*social media */
 .social-media {
