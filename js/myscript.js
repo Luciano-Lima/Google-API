@@ -7,20 +7,20 @@
     var hostnameRegexp = new RegExp('^https?://.+?/');
     var countries = {
       'pt': {
-        center: {lat: 37.019356, lng: -7.930440},
-        zoom: 7
+        center: {lat: 39.3, lng: -8.2},
+        zoom: 5
       },
       'es': {
-        center: {lat: 28.291565, lng: -16.629129},
+        center: {lat: 40.4, lng: -3.70},
         zoom: 5
       },
       'ph': {
-        center: {lat: 9.740696, lng: 118.730072},
+        center: {lat: 12.87, lng: 121},
         zoom: 5
       },
-      'ca': {
-        center: {lat: 13.193887, lng: -59.543198},
-        zoom: 5
+      'br': {
+        center: {lat: -14, lng: -51.9},
+        zoom: 3
       },
       
     };
@@ -28,13 +28,16 @@
     // initialising the map function
     function initAutocomplete() {
       var map =  new google.maps.Map(document.getElementById('map'), {
-        // center: {lat: 37.019356, lng: -7.930440},
         center: countries['pt'].center,
         zoom: 2,
         mapTypeId: 'roadmap',
-        mapTypeControl: false
+        mapTypeControl: false,
+        zoomControl: false,
+        streetViewControl: true
+        
         
       });
+        
       
       //infowindow to display the DOM hotel content  
       infoWindow = new google.maps.InfoWindow({
@@ -73,6 +76,7 @@
         var search = {
           bounds: map.getBounds(),
           types: ['lodging']
+          
         };
         
         //get the nearby hotels and place a marker for each
@@ -229,13 +233,13 @@
     // defining the popular destination markers with infowindow content
     var preSetMarkers = [
       { coords: {lat: 37.019356, lng: -7.930440},
-        icon: '/pictures/portugal_flag.png',  
+        icon: '/pictures/portugal-icon.png',  
         content: '<h3>Algarve PT</h3>' + '<p>The Algarve is the southernmost region of continental Portugal. It has an area of 4,997 km2 (1,929 sq mi) with 451,006 permanent inhabitants.</p>',
       },
-      { coords: {lat: 13.193887, lng: -59.543198},
-        icon: '/pictures/barbados_flag.png',
-        content: '<h3>Barbados BB </h3>' + 
-        '<p>Barbados is an island country in the Caribbean Sea. The island has an area of about 430 kmÂ². Its capital and largest city is Bridgetown.</p>',
+      { coords: {lat: -12.9704, lng: -38.5124},
+        icon: '/pictures/brazil-icon.png',
+        content: '<h3>Bahia BR </h3>' + 
+        '<p>Salvador is the capital of Bahia State, a place well known for its natural beauties, for the kindness of its people and for the strong influence of the African culture.</p>',
       },
       { coords: {lat: 9.740696, lng: 118.730072},
         icon: '/pictures/palawan_flag.png',
@@ -244,7 +248,7 @@
       },
     
     { coords: {lat: 28.291565, lng: -16.629129},
-      icon: '/pictures/spain-flag.png',
+      icon: '/pictures/spain-icon.png',
       content: '<h3>Tenerife ES</h3>' + 
       '<p>Tenerife is the largest and most populated island of the seven Canary Islands. It is also the most populated island of Spain, with a land area of 2,034.38 square</p>',
     },
