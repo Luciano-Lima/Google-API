@@ -185,7 +185,7 @@ function initAutocomplete() {
   function buildIWContent(place) {
     document.getElementById('iw-icon').innerHTML = '<img class="hotelIcon" ' +
       'src="' + place.icon + '"/>';
-    document.getElementById('iw-url').innerHTML = '<b><a href="' + place.url +
+    document.getElementById('iw-url').innerHTML = '<b><a target="_blank" href="' + place.url +
       '">' + place.name + '</a></b>';
     document.getElementById('iw-address').textContent = place.vicinity;
 
