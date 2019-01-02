@@ -11,7 +11,7 @@ html, body {
     line-height: 1.8em;
     color: #535353;
 }
-        /*gobal styling*/
+        /*-----gobal styling------*/
 .bg-cover {
     background-image: url('/pictures/background.jpeg');
     background-repeat: no-repeat;
@@ -26,7 +26,7 @@ section {
     margin-bottom: 50px;
 }
 
-            /*navegation*/
+            /*-----navegation------*/
 .bg-light {
     background-color: #950000 !important;
     
@@ -38,10 +38,10 @@ section {
 }
 
 .fa-font-size {
-    color: cornsilk;
+    /*color: cornsilk;*/
     transition: all .5s ease-in-out;
     transform: scale(1.3) translateY(-3px);
-    
+    color: #5d5e5d;
 }
 
 .navbar-light .navbar-brand {
@@ -92,7 +92,7 @@ h1 {
     position: relative;
 }
 
-        /*main section*/
+        /*-----main section-----*/
 
 h2, h3 {
     padding: 15px;
@@ -107,7 +107,7 @@ h5 {
     font-weight: 700;
     font-size: 1.2em;
 }
-        /*search bar*/
+        /*------search bar-------*/
         
 .search-box {
     width: 50%;
@@ -116,7 +116,7 @@ h5 {
 }
     
     
-     /*Icons section*/
+     /*-----Icons section------*/
 .icon {
    -webkit-filter: invert(25%);
    padding: 20px;
@@ -126,7 +126,7 @@ h5 {
     margin: 0px 40px 0px 40px;
 }
 
-    /*Popular holyday destination section */
+    /*-----Popular holyday destination section----*/
     
 .btn-primary:hover {
     color: #fff;
@@ -214,28 +214,29 @@ h5 {
   text-align: right;
 }
 
-
 table {
   font-size: 12px;
 }
 
-     /*google sign */
+     /*------google sign-------*/
 
 #my-signin2 {
     display: inline-block;
 }
 
-
-        /*social media */
+        /*-----social media------*/
 .social-media i {
-    display: block;
     font-size:30px;
-    margin: 20px;
+    margin: 15px;
     color: #5d5e5d;
-    
+    text-decoration: none;
 }
 
-     /*footer*/
+.social-media a {
+    color: #5d5e5d;
+}
+
+    /*------footer-------*/
         
 footer {
     width: 100%;
@@ -261,11 +262,15 @@ ul {
 }
 
 
-/*media queries */
+/*-----media queries-------*/
 
 @media(min-width: 320px) and (max-width: 413px){
      .container {
         max-width: 100%;
+    }
+    
+     .social-media li {
+        display: inline-block;
     }
     
     .search-box {
@@ -299,6 +304,10 @@ ul {
         background-color: #d6d6d6;
         display: inline-block;
         position: inherit;
+    }
+    
+    .social-media li {
+        display: inline-block;
     }
     
 }
