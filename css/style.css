@@ -158,7 +158,7 @@ h5 {
 
         /*map*/
 #map  {
-    height: 240px;
+    height: 200px;
     margin: 0;
 }
 
@@ -167,29 +167,35 @@ h5 {
     width: 100px;
     font-size: 14px;
     background-color: #d6d6d6;
+    
 }
 
 #locationField {
     position: absolute;
     left: 105px;
-    top: 85px;
-    background-color: #fff;
+    top: 135px;
+    
 }
 
 #controls {
     position: absolute;
     left: 225px;
     width: 100px;
-    top: 85px;
+    top: 135px;
     background-color: #d6d6d6;
 } 
 
 #autocomplete {
-  width: 100%;
+  
+  background-color: #efebeb;
+  border: none;
+  padding-left: 20px;
 }
 
 #country {
-  width: 100%;
+    width: 100%;
+    background-color: #d6d6d6;
+    border: 0;
 }
 
 .placeIcon {
@@ -228,6 +234,13 @@ h5 {
 
 table {
   font-size: 12px;
+}
+
+.map_marker{
+    text-align: center;
+    opacity: .7;
+    font-style: italic;
+    line-height: initial;
 }
 
      /*------google sign-------*/

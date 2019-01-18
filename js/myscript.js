@@ -31,7 +31,7 @@ var countries = {
 function initAutocomplete() {
   var map = new google.maps.Map(document.getElementById('map'), {
     center: countries['pt'].center,
-    zoom: 2,
+    zoom: 1,
     mapTypeId: 'roadmap',
     mapTypeControl: false,
     zoomControl: false,
@@ -80,6 +80,7 @@ function initAutocomplete() {
       types: ['lodging']
 
     };
+    
 
     //get the nearby hotels and place a marker for each
     places.nearbySearch(search, function (results, status) {
@@ -185,7 +186,7 @@ function initAutocomplete() {
   function buildIWContent(place) {
     document.getElementById('iw-icon').innerHTML = '<img class="hotelIcon" ' +
       'src="' + place.icon + '"/>';
-    document.getElementById('iw-url').innerHTML = '<b><a target="_blank" href="' + place.url +
+    document.getElementById('iw-url').innerHTML = '<b><a target="_blank"href="' + place.url +
       '">' + place.name + '</a></b>';
     document.getElementById('iw-address').textContent = place.vicinity;
 
