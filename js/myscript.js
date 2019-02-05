@@ -1,4 +1,3 @@
-
 //declaring the variables to initialising the map
 var markers = [];
 var places;
