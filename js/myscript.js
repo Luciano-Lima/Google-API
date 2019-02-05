@@ -5,38 +5,37 @@ var markers = [];
 var MARKER_PATH = 'https://developers.google.com/maps/documentation/javascript/images/marker_green';
 var infoWindow;
 var placeType;
-// var preSetMarkers = [
-  
-//   {
-//     coords: { lat: 37.019356, lng: -7.930440 },
-//     icon: '/pictures/portugal-icon.png',
-//     content: '<h3>Algarve PT</h3>' + '<p>The Algarve is the southernmost region of continental Portugal. It has an area of 4,997 km2 (1,929 sq mi) with 451,006 permanent inhabitants.</p>',
-//   },
-//   {
-//     coords: { lat: -12.9704, lng: -38.5124 },
-//     icon: '/pictures/brazil-icon.png',
-//     content: '<h3>Bahia BR </h3>' +
-//       '<p>Salvador is the capital of Bahia State, a place well known for its natural beauties, for the kindness of its people and for the strong influence of the African culture.</p>',
-//   },
-//   {
-//     coords: { lat: 9.740696, lng: 118.730072 },
-//     icon: '/pictures/palawan-icon.png',
-//     content: '<h3>Palawan PH</h3>' +
-//       '<p>Palawan officially the Province of Palawan is an archipelagic province of the Philippines that is located in the region of Mimaripa.</p>',
-//   },
+var preSetMarkers = [
+    {
+      coords: { lat: 37.019356, lng: -7.930440 },
+      icon: '/pictures/portugal-icon.png',
+      content: '<h3>Algarve PT</h3>' + '<p>The Algarve is the southernmost region of continental Portugal. It has an area of 4,997 km2 (1,929 sq mi) with 451,006 permanent inhabitants.</p>',
+    },
+    {
+      coords: { lat: -12.9704, lng: -38.5124 },
+      icon: '/pictures/brazil-icon.png',
+      content: '<h3>Bahia BR </h3>' +
+        '<p>Salvador is the capital of Bahia State, a place well known for its natural beauties, for the kindness of its people and for the strong influence of the African culture.</p>',
+    },
+    {
+      coords: { lat: 9.740696, lng: 118.730072 },
+      icon: '/pictures/palawan-icon.png',
+      content: '<h3>Palawan PH</h3>' +
+        '<p>Palawan officially the Province of Palawan is an archipelagic province of the Philippines that is located in the region of Mimaripa.</p>',
+    },
 
-//   {
-//     coords: { lat: 28.291565, lng: -16.629129 },
-//     icon: '/pictures/spain-icon.png',
-//     content: '<h3>Tenerife ES</h3>' +
-//       '<p>Tenerife is the largest and most populated island of the seven Canary Islands. It is also the most populated island of Spain, with a land area of 2,034.38 square</p>',
-//   },
-// ];
+    {
+      coords: { lat: 28.291565, lng: -16.629129 },
+      icon: '/pictures/spain-icon.png',
+      content: '<h3>Tenerife ES</h3>' +
+        '<p>Tenerife is the largest and most populated island of the seven Canary Islands. It is also the most populated island of Spain, with a land area of 2,034.38 square</p>',
+    },
+];
 
 // initializing the map
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 2,
+    zoom: 1,
     mapTypeId: 'roadmap',
     mapTypeControl: false,
     streetViewControl: true,
@@ -47,7 +46,7 @@ function initMap() {
   var searchBox = new google.maps.places.SearchBox(document.getElementById('searchBar'));
   
   // capturing the user input, bounding it to the map and setting the zoom
-  google.maps.event.addEventListener(searchBox, 'places_changed', function() {
+  google.maps.event.addListener(searchBox, 'places_changed', function() {
     var places = searchBox.getPlaces();
     var bounds = new google.maps.LatLngBounds();
     var i, place;
@@ -72,9 +71,111 @@ function initMap() {
     }
     
   });
-  //
+  
+  //sets the info widow to display the places information
+  infoWindow = new google.maps.InfoWindow({
+    content: document.getElementById('info-content')
+  });
+  
+  // loop trough the pre set markers
+  for (var i = 0; i < preSetMarkers.length; i++) {
+    addpreSetMarker(preSetMarkers[i]);
+  }
+  
+  // add the pre set markers to the map
+  function addpreSetMarker(text) {
+    var marker = new google.maps.Marker({
+      position: text.coords,
+      map: map,
+    });
+    
+    // zooming when the marker is clicked with a time out.
+     google.maps.event.addListener(marker, 'click', function () {
+       
+       var pos = map.getZoom();
+       map.setZoom(7);
+       map.setCenter(marker.getPosition());//center the marker to the map view
+       window.setTimeout(function () { map.setZoom(pos); }, 6000);
+     });
+     
+    // set the text content and the icons
+    if(text.content) {
+      var infoWindow = new google.maps.InfoWindow({
+        content: text.content
+      });
+      
+      if(text.icon) {
+          marker.setIcon(text.icon);
+        }
+      }
+     
+    // listener to call the info window
+      marker.addListener('click', function() {
+        infoWindow.open(map, marker);
+        });
+  } 
   
 }
+  
+  
+  // check to see if place has been selected
+  function checkPlaceType() {
+    
+    if ($('#hotel').hasClass('selected')) {
+        placeType = ['lodging'];
+    }
+    else if ($('#store').hasClass('selected')) {
+        placeType = ['store'];
+    }
+    else if ($('#bar').hasClass('selected')) {
+        placeType = ['bar'];
+    }
+    else if ($('#restaurant').hasClass('selected')) {
+        placeType = ['restaurant'];
+    }
+    else if ($('#museum').hasClass('selected')) {
+        placeType = ['museum'];
+    }
+    
+    // calling the search place function
+    searchPlace();
+  }
+  
+  // get the selected place and bounds it to the map
+  function searchPlace() {
+    var search = {
+      bounds: map.getBounds(),
+      types: placeType
+    };
+    
+    service.nearbySearch(search, function(results, status) {
+      if (status === google.maps.places.PlacesServiceStatus.OK) {
+        clearMarkers();
+        //Create markers and assign a letter for each one.
+        for (var i = 0; i < results.length; i++) {
+          var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
+          var markerIcon = MARKER_PATH + markerLetter + '.png';
+          // animation drop for the marker
+          markers[i] = new google.maps.Marker({
+            position: results[i].geometry.location,
+            animation: google.maps.Animation.DROP,
+             icon: markerIcon
+          });
+          
+          // shows a info window with the places information
+          markers[i].placeResult = results[i];
+          google.maps.event.addListener(markers[i], 'click', showInfoWindow);
+          setTimeout(placeMarkers(i), i * 110);
+          
+        }
+      }
+      else{
+        $('#noResults').show();
+      }
+    });  
+  }   
+      
+
 
 
 
