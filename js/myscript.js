@@ -175,9 +175,44 @@ function initMap() {
     });  
   }   
       
-
-
-
+  // clear preview markers
+  function clearMarkers() {
+    for (var i = 0; i < markers.length; i++) {
+      if (markers[i]) {
+        markers[i].setMap(null);
+      }
+    }
+    markers = [];
+  }
+  
+  // add marker to the map
+  function placeMarkers(i) {
+    return function() {
+      markers[i].setMap(map);
+    };
+  }
+  
+  //get the place details
+  function showInfoWindow() {
+    var marker = this;
+    service.getDetails({ placeId: marker.placeResult.place_id },
+    function(place, status) {
+      if (status !== google.maps.places.PlacesServiceStatus.OK) {
+        return;
+      }
+      infoWindow.open(map, marker);
+      setPlaceDetails(place);
+    });
+  }
+  
+  // add place details to the info window
+  function setPlaceDetails(place) {
+    document.getElementById('place-name').innerHTML = place.name + '<img class="hotelIcon" ' + 'src="' + place.icon + '"/>';
+    document.getElementById('address').textContent = place.formatted_address;
+    document.getElementById('phoneNum').textContent = place.formatted_phone_number;
+    document.getElementById('url').innerHTML = '<a href="' + place.website + '" target="_blank">' + 'Website ' + '</a>';
+  }
+      
 
 
 
