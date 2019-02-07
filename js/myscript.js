@@ -213,24 +213,24 @@ function initMap() {
     document.getElementById('phoneNum').textContent = place.formatted_phone_number;
     document.getElementById('url').innerHTML = '<a href="' + place.website + '" target="_blank">' + 'Website ' + '</a>';
   }
-      
-
-
-
-
-
-    
-    
-    
-    
-
-
+     
+   
   
 
+   //sign up form variable declaration
+  var modal = document.getElementById('signUp');
+  
+  // getting the user event click to close the form
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
 
 
-
-// seach bar
+    
+    
+    // google seach bar
 
 (function () {
   var cx = '000839719132049059247:-xxothaal9a';
@@ -273,3 +273,5 @@ function renderButton() {
     'onfailure': onFailure
   });
 }
+
+
