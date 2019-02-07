@@ -25,7 +25,6 @@ $(document).ready(function() {
         $(this).removeClass("fa-font-size");
     });
     
-    
     // to get the user selection and display on the map
     $('#hotel').click(function() {
         $('button').removeClass('selected');

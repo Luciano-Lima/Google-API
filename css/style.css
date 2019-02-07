@@ -11,7 +11,7 @@ html, body {
     line-height: 1.8em;
     color: #535353;
 }
-        /*-----gobal styling------*/
+        /*----------gobal styling-----------*/
 .bg-cover {
     background-image: url('/pictures/background.jpeg');
     background-repeat: no-repeat;
@@ -26,7 +26,7 @@ section {
     margin-bottom: 50px;
 }
 
-            /*-----navegation------*/
+        /*----------navegation-----------*/
 .bg-light {
     background-color: #950000 !important;
     
@@ -97,7 +97,7 @@ h1 {
     position: relative;
 }
 
-        /*-----main section-----*/
+        /*----------main section-----------*/
 
 h2, h3 {
     padding: 15px;
@@ -105,14 +105,13 @@ h2, h3 {
     font-weight: 700;
 }
 
-        /*h4 footer*/
 h5 {
     padding:15px;
     color: #535353;
     font-weight: 700;
     font-size: 1.2em;
 }
-        /*------search bar-------*/
+        /*--------search box----------*/
         
 .search-box {
     width: 50%;
@@ -121,14 +120,14 @@ h5 {
 }
 
 #searchTitle p {
-        text-align: center;
-        padding-top: 40px;
-        opacity: .5;
-        font-style: italic;
+    text-align: center;
+    padding-top: 40px;
+    opacity: .5;
+    font-style: italic;
 }
 
     
-     /*-----Icons section------*/
+        /*--------Icons section----------*/
 .icon {
    -webkit-filter: invert(25%);
    padding: 20px;
@@ -138,7 +137,7 @@ h5 {
     margin: 0px 40px 0px 40px;
 }
 
-    /*-----Popular holyday destination section----*/
+    /*--------Popular holyday destination section-------*/
     
 .btn-primary:hover {
     color: #fff;
@@ -152,11 +151,11 @@ h5 {
 
 .btn-primary {
     color: #fff;
-    background-color: #51463c;
+    background-color: #50463a57;
     border-color: #50463b;
 }
 
-        /*map*/
+        /*------------map-------------*/
 #map  {
     height: 200px;
     margin: 0;
@@ -198,15 +197,88 @@ h5 {
 }
 
 
+    /*----------signUp form----------*/
 
 
-     /*------google sign-------*/
-
-#my-signin2 {
-    display: inline-block;
+.signUp-form input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
 }
 
-        /*-----social media------*/
+
+.signUp-form input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+
+.signupbtn {
+  background-color: #50463a57;
+  color: white;
+  padding: 10px 15px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 80%;
+  opacity: 0.9;
+  border-radius: 5px;
+  
+}
+
+.signupbtn:hover {
+  opacity:2;
+}
+
+
+.signupbtn {
+  text-align: center;
+  width: 80%
+  
+}
+
+    /* The Modal (background) */
+.modal {
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 40px;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: #3d424dd6;
+    padding-top: 50px;
+}
+
+    /* Modal Content/Box */
+.modal-content {
+  background-color: #d3c7c7;
+  margin: 5% auto 15% auto; 
+  border: 0;
+  width: 40%; 
+  
+}
+
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+ 
+    /*  Close Button (x) */
+.close {
+  position: absolute;
+  right: 95px;
+  top: 25px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #f3cea7;
+}
+
+       /*-----social media------*/
 .social-media i {
     font-size:30px;
     margin: 15px;
@@ -221,7 +293,7 @@ h5 {
     color: #5d5e5d;
 }
 
-    /*------footer-------*/
+    /*--------section contact-----------*/
         
 footer {
     width: 100%;
@@ -249,7 +321,7 @@ ul {
 }
 
 
-/*-----media queries-------*/
+        /*----------media queries----------*/
 
 @media(min-width: 320px) and (max-width: 413px){
      .container {
@@ -274,24 +346,7 @@ ul {
         width: 90%;
     }
     
-    #findHotels {
-        font-size: 15px;
-        background-color: #d6d6d6;
-        display: initial;
-    }
     
-    #locationField {
-        display: inline-flex;
-        background-color: #fff;
-        position: inherit;
-    }
-    
-    #controls {
-        width: 25%;
-        background-color: #d6d6d6;
-        display: inline-block;
-        position: inherit;
-    }
     
     .social-media li {
         display: inline-block;
@@ -308,23 +363,7 @@ ul {
         width: 80%;
     }
     
-    #findHotels {
-        font-size: 15px;
-        background-color: #d6d6d6;
-        display: initial;
-    }
     
-    #locationField {
-        display: inline-flex;
-        background-color: #fff;
-        position: inherit;
-    }
-    
-    #controls {
-        background-color: #d6d6d6;
-        display: inline-block;
-        position: inherit;
-    }
 }
 
 @media(min-width: 992px) and (max-width: 1200px) {
