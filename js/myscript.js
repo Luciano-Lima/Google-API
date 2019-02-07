@@ -35,7 +35,7 @@ var preSetMarkers = [
 // initializing the map
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 1,
+    zoom: .4,
     mapTypeId: 'roadmap',
     mapTypeControl: false,
     streetViewControl: true,
@@ -56,7 +56,7 @@ function initMap() {
     }
     
     map.fitBounds(bounds);
-    map.setZoom(14);
+    map.setZoom(13);
   });
   
   // get the selected nearby place 
@@ -170,8 +170,9 @@ function initMap() {
         }
       }
       else{
-        $('#noResults').show();
+        $('#noNearbyPlaces').show();
       }
+      
     });  
   }   
       
@@ -229,46 +230,46 @@ function initMap() {
 
 
 
-// // seach bar
+// seach bar
 
-// (function () {
-//   var cx = '000839719132049059247:-xxothaal9a';
-//   var gcse = document.createElement('script');
-//   gcse.type = 'text/javascript';
-//   gcse.async = true;
-//   gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-//   var s = document.getElementsByTagName('script')[0];
-//   s.parentNode.insertBefore(gcse, s);
-// })();
+(function () {
+  var cx = '000839719132049059247:-xxothaal9a';
+  var gcse = document.createElement('script');
+  gcse.type = 'text/javascript';
+  gcse.async = true;
+  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(gcse, s);
+})();
 
-// // search results
-// (function () {
-//   var cx = '000839719132049059247:-xxothaal9a';
-//   var gcse = document.createElement('script');
-//   gcse.type = 'text/javascript';
-//   gcse.async = true;
-//   gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-//   var s = document.getElementsByTagName('script')[0];
-//   s.parentNode.insertBefore(gcse, s);
-// })();
+// search results
+(function () {
+  var cx = '000839719132049059247:-xxothaal9a';
+  var gcse = document.createElement('script');
+  gcse.type = 'text/javascript';
+  gcse.async = true;
+  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(gcse, s);
+})();
 
 
-// // google sign
+// google sign
 
-// function onSuccess(googleUser) {
-//   console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
-// }
-// function onFailure(error) {
-//   console.log(error);
-// }
-// function renderButton() {
-//   gapi.signin2.render('my-signin2', {
-//     'scope': 'profile email',
-//     'width': 210,
-//     'height': 30,
-//     'longtitle': true,
-//     'theme': 'dark',
-//     'onsuccess': onSuccess,
-//     'onfailure': onFailure
-//   });
-// }
+function onSuccess(googleUser) {
+  console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+}
+function onFailure(error) {
+  console.log(error);
+}
+function renderButton() {
+  gapi.signin2.render('my-signin2', {
+    'scope': 'profile email',
+    'width': 210,
+    'height': 30,
+    'longtitle': true,
+    'theme': 'dark',
+    'onsuccess': onSuccess,
+    'onfailure': onFailure
+  });
+}
