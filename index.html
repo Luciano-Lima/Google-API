@@ -159,7 +159,7 @@
             <div class="col-md-4 text-center">
                 <h5 class="search-header">Search for a city you want to go <br>Then click in one of the options and click on the map to find nearby places</h5>
                 <input id="searchBar" type="search" placeholder="Enter a City">
-                <div id="map"></div>
+                <!--<div id="map"></div>-->
                 <div class="container">
                     <div id="nearby-places">
                         <span class="place-type"><button id="hotel">Hotel</button></span>
@@ -201,8 +201,29 @@
             </div>
             <div class="col-md-4 text-center">
                 <h5>Join Us for the Finest Holiday Inspirations and Exclusive Deals</h5>
-                <!--gogole sign up-->
-                <div id="my-signin2"></div>
+                <button class="signupbtn" onclick="document.getElementById('signUp').style.display='block'">Sign Up</button>
+                <div id="signUp" class="modal">
+                    <span onclick="document.getElementById('signUp').style.display='none'" class="close" title="Close Modal">&times;</span>
+                    <form class="modal-content" action="#">
+                        <div class="signUp-form">
+                            <h1>Sign Up</h1>
+                            <p>Please fill in this form to signUp.</p>
+                            <hr>
+                            <label for="email"><b>Email</b></label>
+                            <input type="text" placeholder="Enter Email" name="email" required>
+                        
+                            <label for="psw"><b>Password</b></label>
+                            <input type="password" placeholder="Enter Password" name="psw" required>
+                        
+                            <label for="psw-repeat"><b>Repeat Password</b></label>
+                            <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+                            
+                            <button type="submit" class="signupbtn">Sign Up</button>
+                        </div>
+                    </form>
+                </div>
+                
+                
                 <!--social media icons-->
                 <div class="social-media">
                     <div>
@@ -210,13 +231,13 @@
                     </div>
                     <ul>
                         <li>
-                            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <a href="https://en-gb.facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                            <a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                            <a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
                         </li>
                     </ul>
                 </div>
