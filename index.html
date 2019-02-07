@@ -21,7 +21,7 @@
         </button>
         <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link active text-white slide-section" href="">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link active text-white slide-section" href="">Home <span class="sr-only">(current)</span></a></a>
                 <a class="nav-item nav-link text-white slide-section" href="#holiday">Holidays</a>
                 <a class="nav-item nav-link text-white slide-section" href="#contact">Contact</a>
             </div>
@@ -157,11 +157,47 @@
     <section id="contact" class="container bg-cover">
         <div class="row">
             <div class="col-md-4 text-center">
-                <h5>First Select a Country then a City to Find Nearby Hotels</h5>
-                <p class="map_marker">Click on the Map Marker to find out where the most Popular Holiday Locations are:</p>
-                <input class="search" id="searchBar" type="search" placeholder="Where would you like to go.. ">
+                <h5 class="search-header">Search for a city you want to go <br>Then click in one of the options and click on the map to find nearby places</h5>
+                <input id="searchBar" type="search" placeholder="Enter a City">
                 <div id="map"></div>
+                <div class="container">
+                    <div id="nearby-places">
+                        <span class="place-type"><button id="hotel">Hotel</button></span>
+                        <span class="place-type"><button id="bar">Bar</button><span>
+                        <span class="place-type"><button id="restaurant">Restaurant</button></span>
+                        <span class="place-type"><button id="museum">Museum</button></span>
+                        <span class="place-type"><button id="store">Store</button></span>
+                    </div>
+                </div>
                 
+                
+                <div style="display: none;" id="noNearbyPlaces">
+                    <h6>Sorry, no <span id="place"></span> nearby!</h6>
+                </div>
+            </div>
+            <div style="display:none;">
+                <div class="text-center" id="info-content">
+                    <table>
+                        <tr>
+                            <td id="icon"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Name:</strong></td>
+                            <td id="place-name"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Address:</strong></td>
+                            <td id="address"></td
+                        </tr>
+                        <tr>
+                            <td><strong>Phone:</strong></td>
+                            <td id="phoneNum"></td> 
+                        </tr>
+                        <tr>
+                            <td id="url"></td>
+                        </tr>
+                    </table>
+                </div>
             </div>
             <div class="col-md-4 text-center">
                 <h5>Join Us for the Finest Holiday Inspirations and Exclusive Deals</h5>
@@ -184,7 +220,6 @@
                         </li>
                     </ul>
                 </div>
-                
             </div>
             <div class="col-md-4 text-center">
                 <h5>Get in Touch</h5>
