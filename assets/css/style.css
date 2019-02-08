@@ -1,0 +1,377 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('https://fonts.googleapis.com/css?family=Slabo+27px');
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+    font-family: "lato", sans-serif;
+    font-weight: 400;
+    line-height: 1.8em;
+    color: #535353;
+}
+        /*----------gobal styling-----------*/
+.bg-cover {
+    background-image: url('/pictures/background.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+    padding-bottom: 20px;
+}
+
+section {
+    margin-bottom: 50px;
+}
+
+        /*----------navegation-----------*/
+.bg-light {
+    background-color: #950000 !important;
+    
+} 
+
+.fa-plane {
+    padding-right: 10px;
+    color: #f3cea7;
+}
+.fa-globe {
+    color: #75675c;
+    font-size: 120%;
+}
+
+.fa-font-size {
+    color: cornsilk;
+    transition: all .5s ease-in-out;
+    transform: scale(1.3) translateY(-3px);
+    
+}
+
+.navbar-light .navbar-brand {
+    color: #fff;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.navbar-light .navbar-brand:hover {
+    color: rgb(242, 206, 164);
+    transition: .3s ease-in;
+    
+}
+
+.navbar-nav {
+    text-transform: uppercase;
+    font-weight: 600;
+    padding-right: 150px;
+}
+
+
+.nav-link:hover {
+    color: rgb(242, 206, 164) !important;
+    transition: .5s ease-in;
+}
+    
+.pimg1 {
+    background-image: url('/pictures/header_pic.jpg');
+    width: 100%;
+    height: 70vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: .9;
+}
+
+h1 {
+    position: relative;
+    top: 50%;
+    text-align: center;
+    color:  #d69b39;
+    font-weight: 600;
+    font-size: 3em;
+    font-family: 'Slabo 27px', serif;
+}
+
+.h1-bg {
+   top: 50%;
+    position: relative;
+}
+
+        /*----------main section-----------*/
+
+h2, h3 {
+    padding: 15px;
+    color: #535353;
+    font-weight: 700;
+}
+
+h5 {
+    padding:15px;
+    color: #535353;
+    font-weight: 700;
+    font-size: 1.2em;
+}
+        /*--------search box----------*/
+        
+.search-box {
+    width: 50%;
+    margin: 20px auto;
+    padding: 2px;
+}
+
+#searchTitle p {
+    text-align: center;
+    padding-top: 40px;
+    opacity: .5;
+    font-style: italic;
+}
+
+    
+        /*--------Icons section----------*/
+.icon {
+   -webkit-filter: invert(25%);
+   padding: 20px;
+ }
+ 
+.icons {
+    margin: 0px 40px 0px 40px;
+}
+
+    /*--------Popular holyday destination section-------*/
+    
+.btn-primary:hover {
+    color: #fff;
+    background-color: #920000;
+    border-color: #fff;
+}
+
+.col-sm-4 p {
+    color: #535353;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #50463a57;
+    border-color: #50463b;
+}
+
+        /*------------map-------------*/
+#map  {
+    height: 200px;
+    margin: 0;
+}
+
+#searchBar {
+    width: 100%;
+}
+
+.search-header {
+    margin: 0;
+}
+
+::placeholder {
+    opacity: .5;
+    font-style: italic;
+}
+
+.container #nearby-places {
+    font-size: 90%;
+}
+
+.container #nearby-places button {
+    background: #a3b4c6;
+    border-radius: 5px;
+    color: white;
+    outline: none;
+}
+
+.container #nearby-places button:hover {
+    color: #5d5e5d;
+    transition-delay: .2s ease-in-out;
+}
+
+
+.hotelIcon {
+    width: 24px;
+    height: 24px;
+}
+
+
+    /*----------signUp form----------*/
+
+
+.signUp-form input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+
+.signUp-form input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+
+.signupbtn {
+  background-color: #50463a57;
+  color: white;
+  padding: 10px 15px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 80%;
+  opacity: 0.9;
+  border-radius: 5px;
+  
+}
+
+.signupbtn:hover {
+  opacity:2;
+}
+
+
+.signupbtn {
+  text-align: center;
+  width: 80%
+  
+}
+
+    /* The Modal (background) */
+.modal {
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 40px;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: #3d424dd6;
+    padding-top: 50px;
+}
+
+    /* Modal Content/Box */
+.modal-content {
+  background-color: #d3c7c7;
+  margin: 5% auto 15% auto; 
+  border: 0;
+  width: 40%; 
+  
+}
+
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+ 
+    /*  Close Button (x) */
+.close {
+  position: absolute;
+  right: 95px;
+  top: 25px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #f3cea7;
+}
+
+       /*-----social media------*/
+.social-media i {
+    font-size:30px;
+    margin: 15px;
+    color: #5d5e5d;
+    text-decoration: none;
+}
+.social-media {
+    padding-left: 0;
+}
+
+.social-media a {
+    color: #5d5e5d;
+}
+
+    /*--------section contact-----------*/
+        
+footer {
+    width: 100%;
+    background-color: #a21515;
+    text-align: center;
+    border-bottom: 2px solid #f3cea7;
+    padding: 15px;
+    color: white;
+    font-weight: 600;
+}
+
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.fa-home, .fa-envelope-o, .fa-phone {
+    font-size: 30px;
+    color: #5d5e5d;
+}
+
+#wrapper {
+    background-color: #d6d6d6;
+}
+
+
+        /*----------media queries----------*/
+
+@media(min-width: 320px) and (max-width: 413px){
+     .container {
+        max-width: 100%;
+    }
+    
+     .social-media li {
+        display: inline-block;
+    }
+    
+    .search-box {
+        width: 90%;
+    }
+}
+
+@media(min-width: 414px) and (max-width: 736px) {
+        .container {
+        max-width: 100%;
+    }
+    
+    .search-box {
+        width: 90%;
+    }
+    
+    
+    
+    .social-media li {
+        display: inline-block;
+    }
+    
+}
+
+@media(min-width: 768px) and (max-width: 991px) {
+    .container {
+        max-width: 100%;
+    }
+    
+    .search-box {
+        width: 80%;
+    }
+    
+    
+}
+
+@media(min-width: 992px) and (max-width: 1200px) {
+    .container {
+        max-width: 100%;
+    }
+    
+    .search-box {
+        width: 80%;
+    }
+}
