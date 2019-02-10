@@ -226,6 +226,13 @@ function initMap() {
       modal.style.display = "none";
     }
   };
+  
+  
+  
+  
+  
+  
+  
 
 
     

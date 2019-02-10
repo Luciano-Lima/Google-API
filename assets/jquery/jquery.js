@@ -67,4 +67,24 @@ $(document).ready(function() {
           clearMarkers();
     });
     
+    // Display contact form when the user clicks on the envelop icon  
+    $('#getContactUsForm').click(function() {
+        $('#getInTouch').show();
+        
+    });
+     
+     // Show alert box when submiting the contact form
+      $('#contactUsForm').submit(function(event) {
+        alert("We have received your enquire, Thanks");  
+        
+      });
+    
+    // Show alert box when submiting the newslleter form
+      $('#newsletter-form').submit(function(event) {
+        alert("Thanks for your subscription:");  
+        
+      });
+    
+    
+   
 })
