@@ -74,10 +74,21 @@ $(document).ready(function() {
     });
      
      // Show alert box when submiting the contact form
-      $('#contactUsForm').submit(function(event) {
-        alert("We have received your enquire, Thanks");  
+     $('#contactUsForm').submit(function(event) {
+         $('#contactUsForm').each(function() {
+              
+    });
+          
+    $('.signupbtn').on('click', function() {
+        $('#contactUsForm').each( function() { this.reset; });
+             
+    });
+    esalert("We have received your enquire, Thanks");
+      
         
       });
+       
+      
     
     // Show alert box when submiting the newslleter form
       $('#newsletter-form').submit(function(event) {
