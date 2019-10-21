@@ -23,10 +23,10 @@ html, body {
 }
 
 section {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
-        /*----------navegation-----------*/
+    /*----------navegation-----------*/
 .bg-light {
     background-color: #950000 !important;
     
@@ -97,7 +97,7 @@ h1 {
     position: relative;
 }
 
-        /*----------main section-----------*/
+    /*----------main section-----------*/
 
 h2, h3 {
     padding: 15px;
@@ -106,12 +106,11 @@ h2, h3 {
 }
 
 h5 {
-    padding:15px;
-    color: #535353;
-    font-weight: 700;
-    font-size: 1.2em;
+    padding: 15px;
+    color: #343a40c4;
+    font-weight: 400;
 }
-        /*--------search box----------*/
+    /*--------search box----------*/
         
 .search-box {
     width: 50%;
@@ -127,7 +126,7 @@ h5 {
 }
 
     
-        /*--------Icons section----------*/
+    /*--------Icons section----------*/
 .icon {
    -webkit-filter: invert(25%);
    padding: 20px;
@@ -137,7 +136,13 @@ h5 {
     margin: 0px 40px 0px 40px;
 }
 
-    /*--------Popular holyday destination section-------*/
+    /*--------Popular holyday destination-------*/
+    
+.btn-primary {
+    color: #fff;
+    background-color: #50463a57;
+    border-color: #ffff;
+}
     
 .btn-primary:hover {
     color: #fff;
@@ -156,11 +161,20 @@ h5 {
     font-size: 1rem;
 }
 
-.btn-primary {
-    color: #fff;
-    background-color: #50463a57;
-    border-color: #50463b;
+.card-body {
+    padding: 0.5rem;
+} 
+
+.card-body h5 {
+    padding: 0;
 }
+
+.img-thumbnail {
+    border: 1px solid #dee2e6;
+    border-radius: .25rem;
+    padding: 0;
+}
+
 
     /*------------map-------------*/
 #map  {
@@ -198,18 +212,15 @@ h5 {
 .container #nearby-places button {
     background: #50463a57;
     color: white;
-    
     opacity: 0.9;
     border: 1px solid #ffff;
     cursor: pointer;
 }
-   
-
+    
 .container #nearby-places button:hover {
     color: #5d5e5d;
     transition-delay: .2s ease-in-out;
 }
-
 
 .hotelIcon {
     width: 24px;
@@ -234,7 +245,6 @@ h5 {
 
 .multForm input[type=text]:focus, input[type=password]:focus {
   background: #b3868636;
-
 }
 
 #getSignUp .signupbtn {
@@ -262,10 +272,9 @@ h5 {
 }
 
 
-    /* The Modal (background) */
+    /*----------Modal background----------*/
 .modal {
     position: fixed; 
-    position: fixed;
     z-index: 1; 
     left: 0;
     top: 40px;
@@ -275,60 +284,46 @@ h5 {
     background-color: #3d424dd6;
     padding-top: 50px;
 }
+    
 
-    /* Modal Content/Box */
+    /*------ Modal Content/Box------ */
 .modal-content {
   background-color: #d3c7c7;
   margin: 5% auto 15% auto; 
-/*   border: 0; */
   width: 80%; 
-  
-}
+ }
 
 
 hr {
   border: 1px solid #f1f1f1;
   margin-bottom: 25px;
 }
- 
-    /*  Close Button (x) */
-.close {
-  position: absolute;
-  right: 95px;
-  top: 25px;
-  font-size: 30px;
-  font-weight: bold;
-  color: #f3cea7;
+
+     /*-----social media------*/
+.social-media {
+    margin-top: 55px;
 }
 
-       /*-----social media------*/
+.social-media ul li {
+    display: inline;
+}
+
 .social-media i {
     font-size:30px;
     margin: 15px;
     color: #5d5e5d;
-    text-decoration: none;
-}
-.social-media {
-    padding-left: 0;
 }
 
 .social-media a {
     color: #5d5e5d;
 }
 
-    /*--------section contact-----------*/
-        
-footer {
-    width: 100%;
-    background-color: #a21515;
-    text-align: center;
-    border-bottom: 2px solid #f3cea7;
-    padding: 15px;
-    color: white;
+.social-media h6 {
+    font-size: larger;
     font-weight: 600;
 }
 
-
+    /*--------section contact-----------*/
 ul {
     list-style: none;
     padding-left: 0;
@@ -339,34 +334,38 @@ ul {
     color: #5d5e5d;
 }
 
-#wrapper {
-    background-color: #d6d6d6;
-}
-
-
-
-
     /*--------contact form -------------*/
-
-
-.signUp-form textarea {
+.multForm textarea {
     overflow: auto;
     resize: vertical;
     width: 100%;
     height: 150px;
-    background-color: #f1f1f1;
+    background-color: #cbbab9;
     border: 0;
-    
 }
-.signUp-form textarea:focus {
+
+.multForm textarea:focus {
     color: #3d424dd6;
     cursor: pointer;
  }
  
- .signupbtn {
-    text-align: center;
+ /*-------Footer-----------*/
+footer {
     width: 100%;
- }
+    background-color: #a21515;
+    text-align: center;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
  
  /*--------displaing user information after form submition-------*/
  #show-contMessage {
@@ -377,16 +376,7 @@ ul {
     
  }
 
-
-
-
-
-
-
-
-
-
-        /*----------media queries----------*/
+ /*----------media queries----------*/
 
 @media(min-width: 320px) and (max-width: 413px){
      .container {
@@ -400,6 +390,11 @@ ul {
     .search-box {
         width: 90%;
     }
+
+    .hideMobile {
+        display: none;
+
+    }
 }
 
 @media(min-width: 414px) and (max-width: 736px) {
@@ -411,12 +406,14 @@ ul {
         width: 90%;
     }
     
-    
-    
     .social-media li {
         display: inline-block;
     }
-    
+
+    .hideMobile {
+        display: none;
+
+    }
 }
 
 @media(min-width: 768px) and (max-width: 991px) {
@@ -428,9 +425,8 @@ ul {
         width: 80%;
     }
     
-    
 }
-
+    
 @media(min-width: 992px) and (max-width: 1200px) {
     .container {
         max-width: 100%;
