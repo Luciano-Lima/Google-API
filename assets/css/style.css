@@ -13,7 +13,7 @@ html, body {
 }
         /*----------gobal styling-----------*/
 .bg-cover {
-    background-image: url('assets/pictures/background.jpeg');
+    background-image: url('../pictures/background.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
 }
