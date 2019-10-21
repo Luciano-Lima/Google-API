@@ -10,10 +10,10 @@ $(document).ready(function() {
             scrollTop: $(linkHref).offset().top - navbarHeight
         });
         
-        
         //to prevent the # to be added at the end of the the URL
         e.preventDefault(); 
     });
+        
     
     
     // increasing the icons font zize when hovered
@@ -25,7 +25,7 @@ $(document).ready(function() {
         $(this).removeClass("fa-font-size");
     });
     
-    // to get the user selection and display on the map
+    // Get the user selection and display on the map
     $('#hotel').click(function() {
         $('button').removeClass('selected');
         $(this).addClass('selected');
@@ -33,6 +33,27 @@ $(document).ready(function() {
           
     });
        
+    $('#bar').click(function() {
+      $('button').removeClass('selected');
+      $(this).addClass('selected');
+      $('#place').text('bars');
+      
+    });
+   
+    $('#restaurant').click(function() {
+      $('button').removeClass('selected');
+      $(this).addClass('selected');
+      $('#place').text('restaurants');
+    
+    });
+   
+    $('#museum').click(function() {
+      $('button').removeClass('selected');
+      $(this).addClass('selected');
+      $('#place').text('museum');
+      
+    });
+   
     $('#store').click(function() {
         $('button').removeClass('selected');
         $(this).addClass('selected');
@@ -40,53 +61,35 @@ $(document).ready(function() {
           
     });
    
-   $('#bar').click(function() {
-      $('button').removeClass('selected');
-      $(this).addClass('selected');
-      $('#place').text('bars');
-      
-   });
    
-   $('#restaurant').click(function() {
-      $('button').removeClass('selected');
-      $(this).addClass('selected');
-      $('#place').text('restaurants');
-    
-   });
-       
-   $('#museum').click(function() {
-      $('button').removeClass('selected');
-      $(this).addClass('selected');
-      $('#place').text('museum');
-      
-   });
-
-    
-    //   remove the old marker for each place selected
+    // Remove old marker for each place selected
     $('.place-type').children().click(function() {
           clearMarkers();
     });
     
-    // Display contact form when the user clicks on the envelop icon  
+    // Display signUp form
+    $('#getSignUp').click(function() {
+        $('#signUp').show();
+    })
+    
+    // Display contact form   
     $('#getContactUsForm').click(function() {
         $('#getInTouch').show();
         
     });
-     
-     // Show alert box when submiting the contact form
-     $('#contactUsForm').submit(function(event) {
-         $('#contactUsForm').each(function() {
+    
+    // Show alert box when submiting the contact form
+    $('#contactUsForm').submit(function(event) {
+        $('#contactUsForm').each(function() {
               
+        });
+            
+        $('.signupbtn').on('click', function() {
+            $('#contactUsForm').each( function() { this.reset; });
+                
+        });
+        alert("We have received your enquire, Thanks");
     });
-          
-    $('.signupbtn').on('click', function() {
-        $('#contactUsForm').each( function() { this.reset; });
-             
-    });
-    esalert("We have received your enquire, Thanks");
-      
-        
-      });
        
       
     
@@ -94,7 +97,23 @@ $(document).ready(function() {
       $('#newsletter-form').submit(function(event) {
         alert("Thanks for your subscription:");  
         
-      });
+    });
+    
+    
+    // Show Booking form  
+    $('.getholidayDestination').click(function() {
+        $('#holidayDestination').show();
+        
+    });
+    
+     // DatePicker
+    $('.datepicker').datepicker({
+        weekStart: 1,
+        daysOfWeekHighlighted: "6,0",
+        autoclose: true,
+        todayHighlight: true,
+    });
+    $('#datepicker').datepicker("setDate", new Date());
     
     
    
