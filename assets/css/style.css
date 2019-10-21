@@ -162,7 +162,7 @@ h5 {
     border-color: #50463b;
 }
 
-        /*------------map-------------*/
+    /*------------map-------------*/
 #map  {
     height: 200px;
     margin: 0;
@@ -170,6 +170,9 @@ h5 {
 
 #searchBar {
     width: 100%;
+    background: #50463a57;
+    opacity: 0.9;
+    border: 1px solid #ffff;
 }
 
 .search-header {
@@ -177,20 +180,30 @@ h5 {
 }
 
 ::placeholder {
-    opacity: .5;
     font-style: italic;
+    color: #ffff;
+    opacity: 0.8;
 }
 
-.container #nearby-places {
-    font-size: 90%;
+
+#noNearbyPlaces {
+    display: none;
 }
+
+#mapPlacesInfo {
+    display: none;
+}
+
 
 .container #nearby-places button {
-    background: #a3b4c6;
-    border-radius: 5px;
+    background: #50463a57;
     color: white;
-    outline: none;
+    
+    opacity: 0.9;
+    border: 1px solid #ffff;
+    cursor: pointer;
 }
+   
 
 .container #nearby-places button:hover {
     color: #5d5e5d;
