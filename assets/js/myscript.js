@@ -8,25 +8,25 @@ var placeType;
 var preSetMarkers = [
     {
       coords: { lat: 37.019356, lng: -7.930440 },
-      icon: '/pictures/portugal-icon.png',
+      icon: 'assets/pictures/portugal-icon.png',
       content: '<h3>Algarve PT</h3>' + '<p>The Algarve is the southernmost region of continental Portugal. It has an area of 4,997 km2 (1,929 sq mi) with 451,006 permanent inhabitants.</p>',
     },
     {
       coords: { lat: -12.9704, lng: -38.5124 },
-      icon: '/pictures/brazil-icon.png',
+      icon: 'assets/pictures/brazil-icon.png',
       content: '<h3>Bahia BR </h3>' +
         '<p>Salvador is the capital of Bahia State, a place well known for its natural beauties, for the kindness of its people and for the strong influence of the African culture.</p>',
     },
     {
       coords: { lat: 9.740696, lng: 118.730072 },
-      icon: '/pictures/palawan-icon.png',
+      icon: 'assets/pictures/palawan-icon.png',
       content: '<h3>Palawan PH</h3>' +
         '<p>Palawan officially the Province of Palawan is an archipelagic province of the Philippines that is located in the region of Mimaripa.</p>',
     },
 
     {
       coords: { lat: 28.291565, lng: -16.629129 },
-      icon: '/pictures/spain-icon.png',
+      icon: 'assets/pictures/spain-icon.png',
       content: '<h3>Tenerife ES</h3>' +
         '<p>Tenerife is the largest and most populated island of the seven Canary Islands. It is also the most populated island of Spain, with a land area of 2,034.38 square</p>',
     },
@@ -118,14 +118,11 @@ function initMap() {
 }
   
   
-  // check to see if place has been selected
+ // check to see if place has been selected
   function checkPlaceType() {
     
     if ($('#hotel').hasClass('selected')) {
         placeType = ['lodging'];
-    }
-    else if ($('#store').hasClass('selected')) {
-        placeType = ['store'];
     }
     else if ($('#bar').hasClass('selected')) {
         placeType = ['bar'];
@@ -135,6 +132,9 @@ function initMap() {
     }
     else if ($('#museum').hasClass('selected')) {
         placeType = ['museum'];
+    }
+    else if ($('#store').hasClass('selected')) {
+        placeType = ['store'];
     }
     
     // calling the search place function
@@ -147,6 +147,9 @@ function initMap() {
       bounds: map.getBounds(),
       types: placeType
     };
+    
+    //hide no nearby msg
+    $('#noNearbyPlaces').hide();
     
     service.nearbySearch(search, function(results, status) {
       if (status === google.maps.places.PlacesServiceStatus.OK) {
@@ -213,31 +216,9 @@ function initMap() {
     document.getElementById('phoneNum').textContent = place.formatted_phone_number;
     document.getElementById('url').innerHTML = '<a href="' + place.website + '" target="_blank">' + 'Website ' + '</a>';
   }
-     
-   
-  
-
-   //sign up form variable declaration
-  var modal = document.getElementById('signUp');
-  
-  // getting the user event click to close the form
-  window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  };
   
   
-  
-  
-  
-  
-  
-
-
-    
-    
-    // google seach bar
+  // google seach bar
 
 (function () {
   var cx = '000839719132049059247:-xxothaal9a';
@@ -260,25 +241,5 @@ function initMap() {
   s.parentNode.insertBefore(gcse, s);
 })();
 
-
-// google sign
-
-function onSuccess(googleUser) {
-  console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
-}
-function onFailure(error) {
-  console.log(error);
-}
-function renderButton() {
-  gapi.signin2.render('my-signin2', {
-    'scope': 'profile email',
-    'width': 210,
-    'height': 30,
-    'longtitle': true,
-    'theme': 'dark',
-    'onsuccess': onSuccess,
-    'onfailure': onFailure
-  });
-}
 
 
