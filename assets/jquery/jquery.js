@@ -5,7 +5,6 @@ $(document).ready(function() {
     
     $('.slide-section').click(function(e){
         var linkHref = $(this).attr('href');
-        
         $('html, body').animate({
             scrollTop: $(linkHref).offset().top - navbarHeight
         });
@@ -14,8 +13,7 @@ $(document).ready(function() {
         e.preventDefault(); 
     });
         
-    
-    
+        
     // increasing the icons font zize when hovered
    $(".fa").mouseenter(function(){
        $(this).addClass("fa-font-size");
@@ -25,35 +23,40 @@ $(document).ready(function() {
         $(this).removeClass("fa-font-size");
     });
     
-    // Get the user selection and display on the map
+    // Get the user selection for hotel to display on the map
     $('#hotel').click(function() {
-        $('button').removeClass('selected');
+        $('button').removeClass('selected'); 
         $(this).addClass('selected');
-        $('#place').text('hotel'); //Adds the place type name to the #place and #placeCount placeholers in the info windows------------
+        $('#place').text('hotel'); 
           
     });
-       
+    
+    // Get the user selection for bar to display on the map
     $('#bar').click(function() {
       $('button').removeClass('selected');
       $(this).addClass('selected');
       $('#place').text('bars');
       
     });
-   
+    
+       
+   // Get the user selection for restaurant to display on the map
     $('#restaurant').click(function() {
       $('button').removeClass('selected');
       $(this).addClass('selected');
       $('#place').text('restaurants');
     
     });
-   
+    
+   // Get the user selection for museum to display on the map
     $('#museum').click(function() {
       $('button').removeClass('selected');
       $(this).addClass('selected');
       $('#place').text('museum');
       
     });
-   
+    
+   // Get the user selection for store to display on the map
     $('#store').click(function() {
         $('button').removeClass('selected');
         $(this).addClass('selected');
@@ -66,6 +69,7 @@ $(document).ready(function() {
     $('.place-type').children().click(function() {
           clearMarkers();
     });
+    
     
     // Display signUp form
     $('#getSignUp').click(function() {
@@ -83,22 +87,17 @@ $(document).ready(function() {
         $('#contactUsForm').each(function() {
               
         });
-            
-        $('.signupbtn').on('click', function() {
-            $('#contactUsForm').each( function() { this.reset; });
-                
-        });
+        
         alert("We have received your enquire, Thanks");
     });
+            
        
-      
-    
     // Show alert box when submiting the newslleter form
       $('#newsletter-form').submit(function(event) {
         alert("Thanks for your subscription:");  
         
     });
-    
+      
     
     // Show Booking form  
     $('.getholidayDestination').click(function() {
@@ -106,7 +105,8 @@ $(document).ready(function() {
         
     });
     
-     // DatePicker
+    
+    // DatePicker
     $('.datepicker').datepicker({
         weekStart: 1,
         daysOfWeekHighlighted: "6,0",
@@ -115,6 +115,5 @@ $(document).ready(function() {
     });
     $('#datepicker').datepicker("setDate", new Date());
     
-    
-   
+
 })
