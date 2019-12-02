@@ -146,7 +146,8 @@ h5 {
     
 .btn-primary:hover {
     color: #fff;
-    background-color: #920000;
+    background-color: #50463a57;
+    opacity: .8;
     border-color: #fff;
 }
 
@@ -212,7 +213,7 @@ h5 {
 .container #nearby-places button {
     background: #50463a57;
     color: white;
-    opacity: 0.9;
+    opacity: 0.8;
     border: 1px solid #ffff;
     cursor: pointer;
 }
@@ -257,7 +258,7 @@ h5 {
 .signupbtn {
     width: 100%;
     background-color: #50463a57;
-    color: white;
+    color: #fff;
     padding: 10px 15px; 
     margin: 8px 0;
     cursor: pointer;
@@ -268,7 +269,8 @@ h5 {
 }
 
 .signupbtn:hover {
-  opacity:2;
+  opacity: .8;
+  color: #fff;
 }
 
 
