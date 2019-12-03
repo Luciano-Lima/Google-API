@@ -23,7 +23,7 @@ $(document).ready(function() {
         $(this).removeClass("fa-font-size");
     });
     
-    // Get the user selection for hotel to display on the map
+    // Displays the selection for hotel on the map
     $('#hotel').click(function() {
         $('button').removeClass('selected'); 
         $(this).addClass('selected');
@@ -31,7 +31,7 @@ $(document).ready(function() {
           
     });
     
-    // Get the user selection for bar to display on the map
+    // Displays the selection for bar on the map
     $('#bar').click(function() {
       $('button').removeClass('selected');
       $(this).addClass('selected');
@@ -40,7 +40,7 @@ $(document).ready(function() {
     });
     
        
-   // Get the user selection for restaurant to display on the map
+   // Displays the selection for restaurant on the map
     $('#restaurant').click(function() {
       $('button').removeClass('selected');
       $(this).addClass('selected');
@@ -48,7 +48,7 @@ $(document).ready(function() {
     
     });
     
-   // Get the user selection for museum to display on the map
+   // Displays the selection for museum on the map
     $('#museum').click(function() {
       $('button').removeClass('selected');
       $(this).addClass('selected');
@@ -56,7 +56,7 @@ $(document).ready(function() {
       
     });
     
-   // Get the user selection for store to display on the map
+   // Displays the selection for store on the map
     $('#store').click(function() {
         $('button').removeClass('selected');
         $(this).addClass('selected');
@@ -71,10 +71,18 @@ $(document).ready(function() {
     });
     
     
-    // Display signUp form
+     // Display signUp form
     $('#getSignUp').click(function() {
         $('#signUp').show();
-    })
+    
+    });
+    
+    // Show alert box when submiting the newslleter form
+    $('#newsletterForm').submit(function() {
+        alert("Thanks for your subscription:");  
+            
+    });
+    
     
     // Display contact form   
     $('#getContactUsForm').click(function() {
@@ -83,29 +91,23 @@ $(document).ready(function() {
     });
     
     // Show alert box when submiting the contact form
-    $('#contactUsForm').submit(function(event) {
-        $('#contactUsForm').each(function() {
-              
-        });
-        
+    $('#contactUsForm').submit(function() {
         alert("We have received your enquire, Thanks");
-    });
-            
        
-    // Show alert box when submiting the newslleter form
-      $('#newsletter-form').submit(function(event) {
-        alert("Thanks for your subscription:");  
-        
     });
-      
-    
+       
     // Show Booking form  
     $('.getholidayDestination').click(function() {
         $('#holidayDestination').show();
         
     });
     
-    
+     // Show alert box when submiting the booking form
+    $('#holidayDestination').submit(function() {
+         alert("We have received your booking. Thanks"); 
+        
+    });
+        
     // DatePicker
     $('.datepicker').datepicker({
         weekStart: 1,
@@ -115,5 +117,4 @@ $(document).ready(function() {
     });
     $('#datepicker').datepicker("setDate", new Date());
     
-
 })
