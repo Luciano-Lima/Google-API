@@ -30,7 +30,7 @@ the user who doesn't have a clear destination in mind yet where to go, the WeGet
 
     • The users can follow us in the major social medias just by clicking in the links icons located at the bottom of the third section near to the footer.
 
-The wireframe for this project can be accessed here https://github.com/Luciano-Lima/myCookbook/blob/master/cookbook.png . LINK MUST BE REPLACED
+The wireframe for this project can be accessed here https://github.com/Luciano-Lima/Google-API/blob/master/wireframe/wireframe.png 
 
 ## Features
 
